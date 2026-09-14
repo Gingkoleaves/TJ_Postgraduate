@@ -1,10 +1,11 @@
-"""按来源章节确定性拆分；仅使用 Python 标准库。重复运行会覆盖生成文件。"""
+"""按来源章节确定性拆分；依赖 lxml，将章节直接生成 Markdown。重复运行会覆盖生成文件。"""
 from pathlib import Path
 import re
 import html
 import hashlib
 import json
 import os
+from html转markdown import convert_html
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIG = ROOT / '原始资料'
@@ -47,7 +48,8 @@ def save(path, n, fragment=None, note='回忆及整理资料，非官方试卷�
     rel = Path(os.path.relpath(source, (ROOT / path).parent)).as_posix()
     body = re.sub(r'href="#(s\d+)"', lambda m: 'href="' + rel + '#' + m[1] + '"', body)
     page = '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + html.escape(title) + '</title><style>' + css + '\n#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="' + rel + '#s' + str(n) + '">查看原始资料对应章节</a></p><div class="archive-note">' + html.escape(note) + '</div><p>' + origin + '</p><article class="doc">' + body + '</article></main></body></html>'
-    write(path, page)
+    path = str(Path(path).with_suffix(".md")).replace("\\", "/")
+    write(path, convert_html(page))
     records.append({'path': path, 'section': 's' + str(n), 'source': source.relative_to(ROOT).as_posix(), 'note': note})
 
 def chunks(n, level, pattern):
@@ -116,10 +118,10 @@ intro='''# 同济大学计算机推免与复试题目档案
 按**预推免、夏令营、考研复试 / 实际考试年份 / 笔试、机试、面试**归档，三类考试在顶层完全分开。年份不连续或某类别缺失表示目前没有对应资料，不表示该年没有考试。
 
 - “27届”暂映射为2026年考试、2027届，原始回忆未给考试日期，待核实；“26年复习资料”是汇编标题，不是所有题目的考试年份。
-- 独立HTML保留原有公式、图片、表格、代码与题解；2026年文字回忆使用Markdown，机试逐题存放。
+- 整理后的题目统一使用Markdown，保留表格、代码与题解；原文图片及图片形式的公式保留来源链接（需联网，原外链可能失效）。2026年机试逐题存放。
 - 回忆、补编模拟题和备考指南均在文件中标注，不能等同于官方试卷；本次整理未逐题审校或执行参考代码。
 - [原始离线完整版](原始资料/26年同济CS预推免复习资料_离线完整版.html)保留全部96篇资料；其余通用课程讲义继续在完整版中查阅。
-- [原始机试图片（年份未确认）](原始资料/机试.jpg)、[原始文件校验值](原始资料/SHA256.json)、[HTML来源索引](来源索引.json)、[网络补充](网络补充.md)。
+- [原始机试图片（年份未确认）](原始资料/机试.jpg)、[原始文件校验值](原始资料/SHA256.json)、[来源索引](来源索引.json)、[网络补充](网络补充.md)。
 - 原作者署名、来源链接和版权声明以原始资料为准。本仓库仅完成本地整理。
 
 ## 目录
@@ -129,11 +131,11 @@ for event in ['预推免','夏令营','考研复试','通用复习']:
     intro+=f'### {event}\n\n'
     files = sorted((ROOT/event).rglob('*'))
     for p in files:
-        if p.is_file():
+        if p.is_file() and p.suffix == ".md":
             label = p.relative_to(ROOT/event).as_posix()
             intro+=f'- [{label}]({p.relative_to(ROOT).as_posix()})\n'
     intro+='\n'
-intro+='## 维护\n\n`python 工具/整理资料.py` 可重新生成拆分文件和目录；请在原始资料之外的笔记文件中记录自己的解答，避免被重建覆盖。网络补充为人工核对摘要，脚本不会覆盖。\n'
+intro+='## 维护\n\n`python -m pip install -r 工具/requirements.txt` 安装转换依赖后，`python 工具/整理资料.py` 可重新生成拆分文件和目录；请在原始资料之外的笔记文件中记录自己的解答，避免被重建覆盖。网络补充为人工核对摘要，脚本不会覆盖。\n'
 write('README.md',intro)
 write('原始资料/README.md','# 原始资料\n\n五个用户文件按原字节保留，校验值见SHA256.json。机试.jpg未确认所属年份，不据文件名猜测归属。离线HTML中的外部附件链接不代表附件已下载；原有缺图或外链失效不由本次拆分修复。\n')
-print(f'生成 {len(records)} 个HTML文件，6个2026年Markdown文件，已保留5个原始文件。')
+print(f'生成 {len(records)} 个Markdown文件，6个2026年Markdown文件，已保留5个原始文件。')

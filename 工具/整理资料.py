@@ -6,6 +6,7 @@ import hashlib
 import json
 import os
 from html转markdown import convert_html
+from 合并去重 import finalize
 
 ROOT = Path(__file__).resolve().parents[1]
 ORIG = ROOT / '原始资料'
@@ -21,6 +22,7 @@ raw = source.read_text(encoding='utf-8')
 sections = {int(n): b for n, b in re.findall(r'<section class="doc" id="s(\d+)">(.*?)</section>', raw, re.S)}
 css = re.search(r'<style>(.*?)</style>', raw, re.S)[1]
 records = []
+outputs = {}
 
 def text(s):
     return html.unescape(re.sub('<[^>]*>', '', s)).strip()
@@ -30,14 +32,12 @@ def archive_path(path):
     if parts[0].isdigit() and len(parts) == 3:
         event = parts[2].split('-')[0]
         assert event in ['预推免', '夏令营', '考研复试']
-        return '/'.join([event, *parts])
+        return '/'.join(['推免' if event in ['预推免','夏令营'] else event, *parts])
     return path
 
 def write(path, content):
     path = archive_path(path)
-    p = ROOT / path
-    p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(content, encoding='utf-8')
+    outputs[path] = content
 
 def save(path, n, fragment=None, note='回忆及整理资料，非官方试卷；原有题解和补编内容未经逐题校验。'):
     path = archive_path(path)
@@ -109,33 +109,39 @@ for i,m in enumerate(matches):
     frag=b[m.start():matches[i+1].start() if i+1<len(matches) else len(b)]
     note='第2题样例输入与n=7不一致，解释额外计入了末尾基数3；按正文的7个数统计应为3个，原回忆写4，待核实。' if i==1 else ('操作是同步更新还是依次原地更新未明确；取模边界写为大于而非大于等于，均保留待核实。' if i==3 else '格式化空格及细节以原始资料为准。')
     write(f'2026/机试/预推免-{i+1:02d}-{titles[i]}.md',f'# {titles[i]}\n\n年份暂按2026年考试（2027届）归档，待核实。\n\n来源：[27届机试原文](../../../原始资料/27届预推免机试.txt.txt)。\n\n{b[:matches[0].start()].strip()}\n\n整理备注：{note}\n\n## 原文\n\n```text\n{frag.rstrip()}\n```\n')
-write('原始资料/SHA256.json',json.dumps({n:hashlib.sha256((ORIG/n).read_bytes()).hexdigest() for n in names},ensure_ascii=False,indent=2)+'\n')
+outputs, records = finalize(ROOT, outputs, records)
 write('来源索引.json',json.dumps(records,ensure_ascii=False,indent=2)+'\n')
+intro = """# 同济大学计算机推免与复试题目档案
 
-# 可点击总目录，未抽取的通用知识点仍可由完整版目录访问。
-intro='''# 同济大学计算机推免与复试题目档案
+预推免与夏令营合并为 **推免 / 实际考试年份 / 笔试、机试、面试**，来源类别保留在文件名或分节中。考研复试独立归档。
 
-按**预推免、夏令营、考研复试 / 实际考试年份 / 笔试、机试、面试**归档，三类考试在顶层完全分开。年份不连续或某类别缺失表示目前没有对应资料，不表示该年没有考试。
-
-- “27届”暂映射为2026年考试、2027届，原始回忆未给考试日期，待核实；“26年复习资料”是汇编标题，不是所有题目的考试年份。
-- 整理后的题目统一使用Markdown，保留表格、代码与题解；原文图片及图片形式的公式保留来源链接（需联网，原外链可能失效）。2026年机试逐题存放。
-- 回忆、补编模拟题和备考指南均在文件中标注，不能等同于官方试卷；本次整理未逐题审校或执行参考代码。
-- [原始离线完整版](原始资料/26年同济CS预推免复习资料_离线完整版.html)保留全部96篇资料；其余通用课程讲义继续在完整版中查阅。
-- [原始机试图片（年份未确认）](原始资料/机试.jpg)、[原始文件校验值](原始资料/SHA256.json)、[来源索引](来源索引.json)、[网络补充](网络补充.md)。
-- 原作者署名、来源链接和版权声明以原始资料为准。本仓库仅完成本地整理。
+- “27届”暂按2026年考试、2027届归档，待核实；缺少年份或类型表示当前尚未收集到资料。
+- 统一使用Markdown。回忆题、补编练习和通用备考资料均标注来源；题解未经逐题验证。图片形式的公式保留原链接，可能需要联网。
+- 同年短资料并为汇总，同题复用公共题解；不同题干、输入输出和考核流程仍保留版本差异。详见[合并与去重记录](合并说明.md)。
+- [原始离线完整版](原始资料/26年同济CS预推免复习资料_离线完整版.html)保留全部96篇；[原始文件校验值](原始资料/SHA256.json)、[来源索引](来源索引.json)、[网络补充](网络补充.md)。
 
 ## 目录
 
-'''
-for event in ['预推免','夏令营','考研复试','通用复习']:
-    intro+=f'### {event}\n\n'
-    files = sorted((ROOT/event).rglob('*'))
-    for p in files:
-        if p.is_file() and p.suffix == ".md":
-            label = p.relative_to(ROOT/event).as_posix()
-            intro+=f'- [{label}]({p.relative_to(ROOT).as_posix()})\n'
-    intro+='\n'
-intro+='## 维护\n\n`python -m pip install -r 工具/requirements.txt` 安装转换依赖后，`python 工具/整理资料.py` 可重新生成拆分文件和目录；请在原始资料之外的笔记文件中记录自己的解答，避免被重建覆盖。网络补充为人工核对摘要，脚本不会覆盖。\n'
+"""
+for category in ['推免','考研复试','通用复习']:
+    intro += f'### {category}\n\n'
+    paths = sorted(p for p in outputs if p.startswith(category+'/') and p.endswith('.md'))
+    for path in paths:
+        intro += f'- [{path.split("/",1)[1]}](<{path}>)\n'
+    intro += '\n'
+intro += '## 维护\n\n安装依赖：`python -m pip install -r 工具/requirements.txt`。运行 `python 工具/整理资料.py` 重新生成合并后的题库，重复运行不会恢复旧目录。请将个人解答放在独立笔记中，避免被生成器覆盖。\n'
 write('README.md',intro)
-write('原始资料/README.md','# 原始资料\n\n五个用户文件按原字节保留，校验值见SHA256.json。机试.jpg未确认所属年份，不据文件名猜测归属。离线HTML中的外部附件链接不代表附件已下载；原有缺图或外链失效不由本次拆分修复。\n')
-print(f'生成 {len(records)} 个Markdown文件，6个2026年Markdown文件，已保留5个原始文件。')
+# 只清理本次及上次生成清单中的旧文件，原始资料和个人笔记不受影响。
+old_manifest = ROOT/'生成文件清单.json'
+old_paths = json.loads(old_manifest.read_text(encoding='utf-8')) if old_manifest.exists() else []
+for path, content in outputs.items():
+    p=ROOT/path
+    p.parent.mkdir(parents=True,exist_ok=True)
+    p.write_text(content,encoding='utf-8')
+for path in old_paths:
+    p=ROOT/path
+    if path not in outputs and p.exists():
+        assert p.resolve().is_relative_to(ROOT) and '原始资料' not in p.parts
+        p.unlink()
+old_manifest.write_text(json.dumps(sorted(outputs),ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+print(f'生成 {sum(p.endswith(".md") for p in outputs)} 份Markdown（含目录说明），已按推免合并并去重。')

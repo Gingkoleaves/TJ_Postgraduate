@@ -1,0 +1,130 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>预推免-补编-06-综合模拟题</title><style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--line:#e3e6ea;--accent:#0f6fc5;--code-bg:#f6f8fa;}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--fg);background:#fff;
+ font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB",-apple-system,"Segoe UI",Arial,sans-serif;
+ font-size:15px;line-height:1.75;}
+#layout{display:flex}
+#side{position:fixed;top:0;left:0;width:290px;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px 40px;font-size:13px}
+#side .bk{font-weight:700;font-size:15px;padding:6px 8px 10px;line-height:1.4}
+#side .meta{color:var(--muted);font-size:11px;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+#side a{display:block;color:#333;text-decoration:none;padding:3px 8px;border-radius:4px;line-height:1.5}
+#side a:hover{background:#eef3f8;color:var(--accent)}
+#side .g{font-weight:600;color:#111;padding:8px 8px 3px;margin-top:4px}
+#side .d1{padding-left:20px}#side .d2{padding-left:34px}#side .d3{padding-left:48px}
+#main{margin-left:290px;padding:36px 46px 120px;max-width:900px}
+.cover{padding:60px 0 30px;border-bottom:2px solid var(--fg)}
+.cover h1{font-size:30px;margin:0 0 10px}
+.cover .sub{color:var(--muted);font-size:13px;line-height:1.9}
+#toc{margin:26px 0 0}
+#toc h2{font-size:20px;border:0;margin:0 0 12px}
+#toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+#toc li{padding:2px 0;line-height:1.7}
+#toc li.t{font-weight:700;margin-top:10px}
+#toc li.l1{padding-left:16px}#toc li.l2{padding-left:32px}#toc li.l3{padding-left:48px}
+#toc a{color:#222;text-decoration:none;border-bottom:1px dotted #ccc}
+.doc{padding-top:8px}
+.doc>h1.dt{font-size:24px;margin:34px 0 6px;padding:0 0 8px;border-bottom:2px solid var(--line)}
+.doc .src{font-size:11px;color:var(--muted);margin:0 0 18px}
+.doc h1{font-size:21px;margin:26px 0 10px}
+.doc h2{font-size:19px;margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.doc h3{font-size:17px;margin:20px 0 8px}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px}
+p{margin:9px 0}
+img{max-width:100%;height:auto}
+img.tex{max-height:1.35em;vertical-align:-0.25em;display:inline}
+.missing-img{color:#b45309;background:#fff7ed;border:1px dashed #fdba74;border-radius:3px;padding:0 5px;font-size:12px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+pre code{white-space:pre-wrap;word-break:break-word}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:0.9em;background:var(--code-bg);padding:1px 4px;border-radius:3px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+th,td{border:1px solid #d5d9de;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f5f8;font-weight:600}
+blockquote{margin:12px 0;padding:4px 14px;border-left:4px solid #cfd8e3;background:#f8fafc;color:#374151}
+ul,ol{padding-left:26px;margin:9px 0}
+li{margin:3px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.backtop{font-size:12px;color:var(--muted);text-decoration:none;display:inline-block;margin-top:18px}
+@media print{
+ #side{display:none}
+ #main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.62}
+ @page{size:A4;margin:16mm 14mm}
+ .cover{padding:0 0 18px;break-after:page}
+ #toc{break-after:page}
+ .doc{break-before:page}
+ .doc>h1.dt{font-size:17pt}
+ .doc h1{font-size:15pt}.doc h2{font-size:13.5pt}.doc h3{font-size:12pt}
+ h1,h2,h3,h4{break-after:avoid;break-inside:avoid}
+ pre,table,blockquote,img{break-inside:avoid}
+ tr{break-inside:avoid}
+ img{max-height:210mm}
+ pre{font-size:8.6pt}
+ table{font-size:8.8pt}
+ .backtop{display:none}
+ a{color:inherit;text-decoration:none}
+}
+
+.det{border:1px solid #dbe3ec;border-left:4px solid #7aa7d6;background:#fbfdff;border-radius:6px;padding:6px 14px;margin:12px 0}
+.det-t{display:block;font-weight:700;color:#1d4e89;margin:4px 0 6px}
+.det-t::before{content:"▸ "}
+.det .det-t{margin-top:0}
+@media print{.det{break-inside:auto;background:#fbfdff}}
+
+#main,.doc{overflow-wrap:break-word}
+td,th{overflow-wrap:anywhere}
+pre{max-width:100%}
+.doc table{display:block;overflow-x:auto}
+@media print{.doc table{display:table;table-layout:fixed;width:100%}}
+
+#main{min-width:0;flex:1 1 auto}
+@media print{#layout{display:block}#main{min-width:0}}
+
+#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="../../../原始资料/26年同济CS预推免复习资料_离线完整版.html#s25">查看原始资料对应章节</a></p><div class="archive-note">本篇含“根据回忆补全的题目”、知识点讲解及模拟练习，不能视为完整原题。原解析可能有误，例如127结点满二叉树第7层64结点应为填满。</div><p>原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/pzbw7apkgl1q9et6">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/pzbw7apkgl1q9et6</a></p><article class="doc"><h2>综合模拟题</h2>
+<h3>模拟题1：数据结构综合</h3>
+<p>已知二叉树的层序遍历序列为：A B C D E F G（按层序编号1-7），其中节点D和E是叶子节点。</p>
+<ol>
+<li>画出该二叉树的可能形态（至少两种）</li>
+<li>对每种形态，给出前序、中序、后序遍历结果</li>
+</ol>
+<h3>模拟题2：操作系统综合</h3>
+<p>某系统采用分页存储管理，页面大小4KB，逻辑地址空间32位，物理地址空间34位。</p>
+<ol>
+<li>页表项最少需要多少位？</li>
+<li>如果采用二级页表，如何划分地址结构？</li>
+<li>TLB的作用是什么？为什么能提高性能？</li>
+</ol>
+<h3>模拟题3：网络综合</h3>
+<p>HTTP和HTTPS的区别是什么？简述HTTPS的工作原理，包括：</p>
+<ol>
+<li>TLS握手过程</li>
+<li>对称加密和非对称加密的使用</li>
+<li>数字证书的作用</li>
+</ol>
+<h3>模拟题4：数据库综合</h3>
+<p>给定表结构：</p>
+<ul>
+<li>employees(id, name, dept_id, salary, hire_date)</li>
+<li>departments(id, name, location)</li>
+</ul>
+<p>编写SQL完成：</p>
+<ol>
+<li>查询每个部门工资最高的员工（可能有多个）</li>
+<li>查询连续3年工资都在涨的员工</li>
+<li>查询工资排名前10%的员工（使用窗口函数）</li>
+</ol>
+<h3>模拟题5：算法综合</h3>
+<p><strong>股票买卖最佳时机IV</strong>：给定数组prices表示股票每天的价格，你最多可以完成k笔交易（一买一卖为一笔），求最大利润。</p>
+<p>输入：k = 2, prices = [2,4,1,5,7,2,6]<br>输出：10<br>解释：在第1天买入(2)，第2天卖出(4)，利润2；在第3天买入(1)，第5天卖出(7)，利润6；总利润8？不对，最优是：第1天买入(2)，第5天卖出(7)，利润5；第4天买入(1)... 等等，第4天价格是5，不是1。</p>
+<p>让我重新看：prices = [2,4,1,5,7,2,6]</p>
+<ul>
+<li>方案1：买2卖4(+2)，买1卖7(+6) = 8</li>
+<li>方案2：买2卖7(+5)，买2卖6(+4) = 9</li>
+<li>方案3：买1卖7(+6)，买2卖6(+4) = 10 ✓</li>
+</ul>
+<p>要求用动态规划求解，定义状态并写出代码。</p>
+<hr>
+</article></main></body></html>

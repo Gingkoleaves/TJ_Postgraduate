@@ -1,0 +1,204 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>考研复试-回忆与解析</title><style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--line:#e3e6ea;--accent:#0f6fc5;--code-bg:#f6f8fa;}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--fg);background:#fff;
+ font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB",-apple-system,"Segoe UI",Arial,sans-serif;
+ font-size:15px;line-height:1.75;}
+#layout{display:flex}
+#side{position:fixed;top:0;left:0;width:290px;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px 40px;font-size:13px}
+#side .bk{font-weight:700;font-size:15px;padding:6px 8px 10px;line-height:1.4}
+#side .meta{color:var(--muted);font-size:11px;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+#side a{display:block;color:#333;text-decoration:none;padding:3px 8px;border-radius:4px;line-height:1.5}
+#side a:hover{background:#eef3f8;color:var(--accent)}
+#side .g{font-weight:600;color:#111;padding:8px 8px 3px;margin-top:4px}
+#side .d1{padding-left:20px}#side .d2{padding-left:34px}#side .d3{padding-left:48px}
+#main{margin-left:290px;padding:36px 46px 120px;max-width:900px}
+.cover{padding:60px 0 30px;border-bottom:2px solid var(--fg)}
+.cover h1{font-size:30px;margin:0 0 10px}
+.cover .sub{color:var(--muted);font-size:13px;line-height:1.9}
+#toc{margin:26px 0 0}
+#toc h2{font-size:20px;border:0;margin:0 0 12px}
+#toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+#toc li{padding:2px 0;line-height:1.7}
+#toc li.t{font-weight:700;margin-top:10px}
+#toc li.l1{padding-left:16px}#toc li.l2{padding-left:32px}#toc li.l3{padding-left:48px}
+#toc a{color:#222;text-decoration:none;border-bottom:1px dotted #ccc}
+.doc{padding-top:8px}
+.doc>h1.dt{font-size:24px;margin:34px 0 6px;padding:0 0 8px;border-bottom:2px solid var(--line)}
+.doc .src{font-size:11px;color:var(--muted);margin:0 0 18px}
+.doc h1{font-size:21px;margin:26px 0 10px}
+.doc h2{font-size:19px;margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.doc h3{font-size:17px;margin:20px 0 8px}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px}
+p{margin:9px 0}
+img{max-width:100%;height:auto}
+img.tex{max-height:1.35em;vertical-align:-0.25em;display:inline}
+.missing-img{color:#b45309;background:#fff7ed;border:1px dashed #fdba74;border-radius:3px;padding:0 5px;font-size:12px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+pre code{white-space:pre-wrap;word-break:break-word}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:0.9em;background:var(--code-bg);padding:1px 4px;border-radius:3px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+th,td{border:1px solid #d5d9de;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f5f8;font-weight:600}
+blockquote{margin:12px 0;padding:4px 14px;border-left:4px solid #cfd8e3;background:#f8fafc;color:#374151}
+ul,ol{padding-left:26px;margin:9px 0}
+li{margin:3px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.backtop{font-size:12px;color:var(--muted);text-decoration:none;display:inline-block;margin-top:18px}
+@media print{
+ #side{display:none}
+ #main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.62}
+ @page{size:A4;margin:16mm 14mm}
+ .cover{padding:0 0 18px;break-after:page}
+ #toc{break-after:page}
+ .doc{break-before:page}
+ .doc>h1.dt{font-size:17pt}
+ .doc h1{font-size:15pt}.doc h2{font-size:13.5pt}.doc h3{font-size:12pt}
+ h1,h2,h3,h4{break-after:avoid;break-inside:avoid}
+ pre,table,blockquote,img{break-inside:avoid}
+ tr{break-inside:avoid}
+ img{max-height:210mm}
+ pre{font-size:8.6pt}
+ table{font-size:8.8pt}
+ .backtop{display:none}
+ a{color:inherit;text-decoration:none}
+}
+
+.det{border:1px solid #dbe3ec;border-left:4px solid #7aa7d6;background:#fbfdff;border-radius:6px;padding:6px 14px;margin:12px 0}
+.det-t{display:block;font-weight:700;color:#1d4e89;margin:4px 0 6px}
+.det-t::before{content:"▸ "}
+.det .det-t{margin-top:0}
+@media print{.det{break-inside:auto;background:#fbfdff}}
+
+#main,.doc{overflow-wrap:break-word}
+td,th{overflow-wrap:anywhere}
+pre{max-width:100%}
+.doc table{display:block;overflow-x:auto}
+@media print{.doc table{display:table;table-layout:fixed;width:100%}}
+
+#main{min-width:0;flex:1 1 auto}
+@media print{#layout{display:block}#main{min-width:0}}
+
+#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="../../../原始资料/26年同济CS预推免复习资料_离线完整版.html#s32">查看原始资料对应章节</a></p><div class="archive-note">回忆及整理资料，非官方试卷；原有题解和补编内容未经逐题校验。</div><p>原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/afthh80ncm1sm4gc">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/afthh80ncm1sm4gc</a></p><article class="doc"><h1 class="dt">2025年同济CS考研复试机试真题及参考代码</h1><p class="src">原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/afthh80ncm1sm4gc">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/afthh80ncm1sm4gc</a></p><p><strong>机试40分</strong></p>
+<p>2025年考场安排很乱 </p>
+<p>机试划分了考场和座位号 但是最后考试可以随便坐，提前去的有好位置</p>
+<p>2024年可以带书进去</p>
+<p>但是2025年不可以</p>
+<p>电脑可以联网，纯靠老师肉眼观察有没有作弊</p>
+<p>每一排安排一个老师盯着你的电脑屏幕</p>
+<p>宣讲会时要求使用Dev-C++编译器，实际机试不限制编译器</p>
+<p>考试电脑上可能会什么软件都没有(比如我 系统干净的很 什么都没有)，需要自己联网下载</p>
+<p><strong><font style="background-color:yellow;">考试形式</font></strong>：</p>
+<ul>
+<li>考前30min 发放每个人的登陆账号和密码</li>
+<li>登陆同济的oj系统：10.60.43.52:8002 （2025年）</li>
+<li>我们今年给了<font style="color:#FF0000;">4道题</font>，倒计时到了就可以看到题目内容</li>
+<li>然后在本地写代码，觉得写的可以了就提交到oj上去</li>
+<li>oj上有100个测试例子，可以多次提交，取最高通过成绩</li>
+<li><font style="color:#FF0000;">每道题10分</font>，按accept给分。30/100对应3分，100/100对应10分</li>
+</ul>
+<p>考试机房图片：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2026/jpeg/27371136/1787634857465-96b91998-b44d-4fbf-b51c-a9aee6527788.jpeg" alt="" loading="eager" referrerpolicy="no-referrer"></p>
+<p>心得：</p>
+<p>个人觉得题挺难的 最终a2.5 个</p>
+<p>拿了25 分</p>
+<p>26的题目肯定完全不一样，但是难度应该持平：2道普通中等难度，1道中等偏难，1道hard。</p>
+<p><strong>同济大学计算机科学与技术学院（复试）2025年机试真题(回忆版)</strong></p>
+<ol>
+<li>一段古老密文需要被还原为原始信息。密文采用嵌套的压缩格式，规则如下：</li>
+</ol>
+<p>每个编码段形如：k[encoded_string]，表示其中方括号里的字符串要重复 k 次；</p>
+<p>数字 k 一定是正整数；</p>
+<p>所有输入保证合法，括号配对正确，没有多余空格；</p>
+<p>字母均为小写英文字母，密文中不包含嵌套数字或数字原文（例如，不会出现 3a、2[4] 这样的内容）；</p>
+<p>请你编写一个解码器，将这段压缩格式的密文解析还原，输出完整的原始字符串。</p>
+<p>输入格式：</p>
+<p>一行字符串 s，表示压缩的密文。</p>
+<p>输出格式：</p>
+<p>一行字符串，表示解码后的原文。</p>
+<p>示例 1</p>
+<p>输入：</p>
+<p>3[a]2[bc]</p>
+<p>输出：</p>
+<p>aaabcbc</p>
+<ol start="2">
+<li>你被困在一座由魔法时间阵封印的迷宫中。迷宫是一个 m x n 的网格，记作 grid，其中 grid[row][col] 表示你最早可以在时间 grid[row][col] 访问该格子。</li>
+</ol>
+<p>你从左上角 (0, 0) 出发，起始时间为 0，你必须每一秒移动一次，只能往上下左右四个方向相邻格子移动，不能停留。</p>
+<p>移动的条件是：当前时间 t 满足 t + 1 &gt;= grid[next_row][next_col]，即你不能在允许时间之前进入某个格子。</p>
+<p>你的目标是走到右下角 (m-1, n-1)，返回你最早能到达终点的时间。如果终点无法到达，返回 -1。</p>
+<p>输入格式：</p>
+<p>输入共 m + 1 行：</p>
+<p>第一行包含两个整数 m 和 n，表示网格行列数；</p>
+<p>接下来的 m 行，每行 n 个整数，表示 grid[i][j] 的值。</p>
+<p>输出格式：</p>
+<p>输出一个整数，表示从起点 (0,0) 出发最早可以到达终点 (m-1,n-1) 的时间。如果无法到达终点，则输出 -1。</p>
+<p>示例 1</p>
+<p>输入：</p>
+<p>3 4</p>
+<p>0 1 3 2</p>
+<p>5 1 2 5</p>
+<p>4 3 8 6</p>
+<p>输出：</p>
+<p>7</p>
+<ol start="3">
+<li>你正在开发一个基础代数求解器，目标是解析并求解一个一元一次方程。方程中只包含变量 x，以及整数常数和 + / - 运算符，格式严格规范。</li>
+</ol>
+<p>你的任务是对给定的字符串形式方程进行求解，返回以下三种情况之一：</p>
+<p>如果存在唯一解，输出格式为 "x=#value"；</p>
+<p>如果无解，输出 "No solution"；</p>
+<p>如果有无穷多组解，输出 "Infinite solutions"。</p>
+<p>输入格式</p>
+<p>输入共 1 行：</p>
+<p>第 1 行：一个字符串 equation，表示一个形如 "x+5-3+x=6+x-2" 的一元一次方程。</p>
+<p>equation 中只包含：小写字母 x、数字、+、- 和一个等号 '='</p>
+<p>所有整数均为十进制表示，无前导零；</p>
+<p>equation 保证合法，且恰好包含一个等号。</p>
+<p>输出格式</p>
+<p>输出共 1 行，为一个字符串，表示解的情况，格式如下之一：</p>
+<p>"x=#value"：存在唯一解，#value 为整数；</p>
+<p>"No solution"：无解；</p>
+<p>"Infinite solutions"：有无穷多解。</p>
+<p>示例 1</p>
+<p>输入：</p>
+<p>x+5-3+x=6+x-2</p>
+<p>输出：</p>
+<p>x=2</p>
+<p>解释：</p>
+<p>整理等式两边：</p>
+<p>左边：x + 5 - 3 + x = 2x + 2</p>
+<p>右边：6 + x - 2 = x + 4</p>
+<p>移项：2x + 2 = x + 4 → x = 2</p>
+<ol start="4">
+<li>在一个被恶魔占领的地下城中，勇敢的骑士被派去营救被囚禁在右下角房间的公主。地下城是一个 m x n 的二维网格，每个格子代表一个房间，构成数组 dungeon。</li>
+</ol>
+<p>骑士从左上角 (0, 0) 出发，每次只能向右或向下移动一步，目标是抵达右下角 (m-1, n-1) 的房间。</p>
+<p>房间可能具有如下属性：</p>
+<p>正整数：骑士进入该房间后，获得对应的生命值；</p>
+<p>负整数：骑士受到伤害，失去对应生命值；</p>
+<p>0：房间为空，对生命无影响。</p>
+<p>骑士的生命值不能为 0 或负数，否则当场死亡。他需要有足够的初始生命值以确保无论沿途受到何种伤害，都能顺利抵达并救出公主。</p>
+<p>请你计算并返回骑士最少需要携带多少点初始生命值，才能保证他的任务成功。</p>
+<p>输入格式：</p>
+<p>输入共 m + 1 行：</p>
+<p>第一行包含两个整数 m 和 n，表示地下城的行列数；</p>
+<p>接下来的 m 行，每行 n 个整数 dungeon[i][j]，以空格分隔，表示每个房间对生命值的影响。</p>
+<p>输出格式：</p>
+<p>输出一个整数，表示骑士的最小初始生命值。</p>
+<p>示例 1</p>
+<p>输入：</p>
+<p>3 3</p>
+<p>-2 -3 3</p>
+<p>-5 -10 1</p>
+<p>10 30 -5</p>
+<p>输出：</p>
+<p>7</p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2026/cpp/27371136/1787634954971-475d4223-bcb9-4df5-9837-271bbdfa16d3.cpp">1古老密文（满分）.cpp</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2026/cpp/27371136/1787634955142-5e276da6-d543-427e-b960-41337845c643.cpp">2.魔法迷宫（只accept30%）.cpp</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2026/cpp/27371136/1787634955149-5180e87f-a609-4d82-9a9e-e337062ea0fd.cpp">3.基础代数求解器（满分）.cpp</a></p>
+<p><a href="https://www.yuque.com/attachments/yuque/0/2026/cpp/27371136/1787634955172-04796420-efe0-4d48-923d-04537e00913c.cpp">4.恶魔占领的地下城（满分）.cpp</a></p>
+</article></main></body></html>

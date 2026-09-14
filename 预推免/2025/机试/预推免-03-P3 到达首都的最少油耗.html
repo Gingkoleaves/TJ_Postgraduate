@@ -1,0 +1,157 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>预推免-03-P3 到达首都的最少油耗</title><style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--line:#e3e6ea;--accent:#0f6fc5;--code-bg:#f6f8fa;}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--fg);background:#fff;
+ font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB",-apple-system,"Segoe UI",Arial,sans-serif;
+ font-size:15px;line-height:1.75;}
+#layout{display:flex}
+#side{position:fixed;top:0;left:0;width:290px;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px 40px;font-size:13px}
+#side .bk{font-weight:700;font-size:15px;padding:6px 8px 10px;line-height:1.4}
+#side .meta{color:var(--muted);font-size:11px;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+#side a{display:block;color:#333;text-decoration:none;padding:3px 8px;border-radius:4px;line-height:1.5}
+#side a:hover{background:#eef3f8;color:var(--accent)}
+#side .g{font-weight:600;color:#111;padding:8px 8px 3px;margin-top:4px}
+#side .d1{padding-left:20px}#side .d2{padding-left:34px}#side .d3{padding-left:48px}
+#main{margin-left:290px;padding:36px 46px 120px;max-width:900px}
+.cover{padding:60px 0 30px;border-bottom:2px solid var(--fg)}
+.cover h1{font-size:30px;margin:0 0 10px}
+.cover .sub{color:var(--muted);font-size:13px;line-height:1.9}
+#toc{margin:26px 0 0}
+#toc h2{font-size:20px;border:0;margin:0 0 12px}
+#toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+#toc li{padding:2px 0;line-height:1.7}
+#toc li.t{font-weight:700;margin-top:10px}
+#toc li.l1{padding-left:16px}#toc li.l2{padding-left:32px}#toc li.l3{padding-left:48px}
+#toc a{color:#222;text-decoration:none;border-bottom:1px dotted #ccc}
+.doc{padding-top:8px}
+.doc>h1.dt{font-size:24px;margin:34px 0 6px;padding:0 0 8px;border-bottom:2px solid var(--line)}
+.doc .src{font-size:11px;color:var(--muted);margin:0 0 18px}
+.doc h1{font-size:21px;margin:26px 0 10px}
+.doc h2{font-size:19px;margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.doc h3{font-size:17px;margin:20px 0 8px}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px}
+p{margin:9px 0}
+img{max-width:100%;height:auto}
+img.tex{max-height:1.35em;vertical-align:-0.25em;display:inline}
+.missing-img{color:#b45309;background:#fff7ed;border:1px dashed #fdba74;border-radius:3px;padding:0 5px;font-size:12px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+pre code{white-space:pre-wrap;word-break:break-word}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:0.9em;background:var(--code-bg);padding:1px 4px;border-radius:3px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+th,td{border:1px solid #d5d9de;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f5f8;font-weight:600}
+blockquote{margin:12px 0;padding:4px 14px;border-left:4px solid #cfd8e3;background:#f8fafc;color:#374151}
+ul,ol{padding-left:26px;margin:9px 0}
+li{margin:3px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.backtop{font-size:12px;color:var(--muted);text-decoration:none;display:inline-block;margin-top:18px}
+@media print{
+ #side{display:none}
+ #main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.62}
+ @page{size:A4;margin:16mm 14mm}
+ .cover{padding:0 0 18px;break-after:page}
+ #toc{break-after:page}
+ .doc{break-before:page}
+ .doc>h1.dt{font-size:17pt}
+ .doc h1{font-size:15pt}.doc h2{font-size:13.5pt}.doc h3{font-size:12pt}
+ h1,h2,h3,h4{break-after:avoid;break-inside:avoid}
+ pre,table,blockquote,img{break-inside:avoid}
+ tr{break-inside:avoid}
+ img{max-height:210mm}
+ pre{font-size:8.6pt}
+ table{font-size:8.8pt}
+ .backtop{display:none}
+ a{color:inherit;text-decoration:none}
+}
+
+.det{border:1px solid #dbe3ec;border-left:4px solid #7aa7d6;background:#fbfdff;border-radius:6px;padding:6px 14px;margin:12px 0}
+.det-t{display:block;font-weight:700;color:#1d4e89;margin:4px 0 6px}
+.det-t::before{content:"▸ "}
+.det .det-t{margin-top:0}
+@media print{.det{break-inside:auto;background:#fbfdff}}
+
+#main,.doc{overflow-wrap:break-word}
+td,th{overflow-wrap:anywhere}
+pre{max-width:100%}
+.doc table{display:block;overflow-x:auto}
+@media print{.doc table{display:table;table-layout:fixed;width:100%}}
+
+#main{min-width:0;flex:1 1 auto}
+@media print{#layout{display:block}#main{min-width:0}}
+
+#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="../../../原始资料/26年同济CS预推免复习资料_离线完整版.html#s24">查看原始资料对应章节</a></p><div class="archive-note">来源称真题，实际为民间回忆与整理，含参考题解；未验证题解正确性。</div><p>原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/hwdf87gbtlccp1if">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/hwdf87gbtlccp1if</a></p><article class="doc"><h2>P3 到达首都的最少油耗</h2>
+<p>给你一棵 n + 1 个节点的树（一个无向、连通、无环图），每个节点表示一个城市，编号从 0 到 n，且恰好有 n 条路。0 是首都。给你一个二维整数数组 roads，其中 roads[i] = [ai, bi]，表示城市 ai 和 bi 之间有一条双向路。</p>
+<p>每个城市里有一个代表，他们都要去首都参加一个会议。</p>
+<p>每座城市里有一辆车。给你一个整数 seats 表示每辆车里面座位的数目。</p>
+<p>城市里的代表可以选择乘坐所在城市的车，或者乘坐其他城市的车。相邻城市之间一辆车的油耗是一升汽油。</p>
+<p>请你返回到达首都最少需要多少升汽油。</p>
+<p><strong>输入格式</strong></p>
+<ul>
+<li>第一行是一个整数 n 和座位数 seats，n 表示 roads 的大小。</li>
+<li>接下来 n 行每行两个数字以空格分隔，表示 roads</li>
+</ul>
+<p><strong>输出格式</strong></p>
+<ul>
+<li>输出一个整数，表示到达首都最少需要多少升汽油。</li>
+</ul>
+<p><strong>输入输出样例</strong></p>
+<p>样例1</p>
+<p>输入：</p>
+<pre><code class="language-plain">3 5
+0 1
+0 2
+0 3
+</code></pre>
+<p>输出：</p>
+<pre><code class="language-plain">3
+</code></pre>
+<h3>题解</h3>
+<p>树形DFS + 贪心。从叶子向根统计每个子树需要运送的代表人数，每条边需要的车数为 ⌈人数 / seats⌉，每辆车经过该边耗油1升，累加所有边的车数即可。</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+vector&lt;vector&lt;int&gt;&gt; adj;
+int seats;
+long long ans = 0;
+
+// 返回以 u 为根的子树中的代表总人数
+int dfs(int u, int parent) {
+    int people = 1; // 本市的1名代表
+    for (int v : adj[u]) {
+        if (v == parent) continue;
+        int child = dfs(v, u);
+        people += child;
+        // 子树 child 人经过边 u-v，需要 ceil(child/seats) 辆车，耗油即车数
+        ans += (child + seats - 1) / seats;
+    }
+    return people;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n;
+    cin &gt;&gt; n &gt;&gt; seats;
+    adj.assign(n + 1, {});
+
+    for (int i = 0; i &lt; n; i++) {
+        int a, b;
+        cin &gt;&gt; a &gt;&gt; b;
+        adj[a].push_back(b);
+        adj[b].push_back(a);
+    }
+
+    dfs(0, -1);
+    cout &lt;&lt; ans &lt;&lt; '\n';
+    return 0;
+}
+</code></pre>
+<ul>
+<li>时间复杂度 O(n)，空间复杂度 O(n)</li>
+</ul>
+</article></main></body></html>

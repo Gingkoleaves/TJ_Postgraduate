@@ -1,0 +1,601 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>预推免-补编-04-第四题：数据库-SQL查询</title><style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--line:#e3e6ea;--accent:#0f6fc5;--code-bg:#f6f8fa;}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--fg);background:#fff;
+ font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB",-apple-system,"Segoe UI",Arial,sans-serif;
+ font-size:15px;line-height:1.75;}
+#layout{display:flex}
+#side{position:fixed;top:0;left:0;width:290px;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px 40px;font-size:13px}
+#side .bk{font-weight:700;font-size:15px;padding:6px 8px 10px;line-height:1.4}
+#side .meta{color:var(--muted);font-size:11px;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+#side a{display:block;color:#333;text-decoration:none;padding:3px 8px;border-radius:4px;line-height:1.5}
+#side a:hover{background:#eef3f8;color:var(--accent)}
+#side .g{font-weight:600;color:#111;padding:8px 8px 3px;margin-top:4px}
+#side .d1{padding-left:20px}#side .d2{padding-left:34px}#side .d3{padding-left:48px}
+#main{margin-left:290px;padding:36px 46px 120px;max-width:900px}
+.cover{padding:60px 0 30px;border-bottom:2px solid var(--fg)}
+.cover h1{font-size:30px;margin:0 0 10px}
+.cover .sub{color:var(--muted);font-size:13px;line-height:1.9}
+#toc{margin:26px 0 0}
+#toc h2{font-size:20px;border:0;margin:0 0 12px}
+#toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+#toc li{padding:2px 0;line-height:1.7}
+#toc li.t{font-weight:700;margin-top:10px}
+#toc li.l1{padding-left:16px}#toc li.l2{padding-left:32px}#toc li.l3{padding-left:48px}
+#toc a{color:#222;text-decoration:none;border-bottom:1px dotted #ccc}
+.doc{padding-top:8px}
+.doc>h1.dt{font-size:24px;margin:34px 0 6px;padding:0 0 8px;border-bottom:2px solid var(--line)}
+.doc .src{font-size:11px;color:var(--muted);margin:0 0 18px}
+.doc h1{font-size:21px;margin:26px 0 10px}
+.doc h2{font-size:19px;margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.doc h3{font-size:17px;margin:20px 0 8px}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px}
+p{margin:9px 0}
+img{max-width:100%;height:auto}
+img.tex{max-height:1.35em;vertical-align:-0.25em;display:inline}
+.missing-img{color:#b45309;background:#fff7ed;border:1px dashed #fdba74;border-radius:3px;padding:0 5px;font-size:12px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+pre code{white-space:pre-wrap;word-break:break-word}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:0.9em;background:var(--code-bg);padding:1px 4px;border-radius:3px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+th,td{border:1px solid #d5d9de;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f5f8;font-weight:600}
+blockquote{margin:12px 0;padding:4px 14px;border-left:4px solid #cfd8e3;background:#f8fafc;color:#374151}
+ul,ol{padding-left:26px;margin:9px 0}
+li{margin:3px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.backtop{font-size:12px;color:var(--muted);text-decoration:none;display:inline-block;margin-top:18px}
+@media print{
+ #side{display:none}
+ #main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.62}
+ @page{size:A4;margin:16mm 14mm}
+ .cover{padding:0 0 18px;break-after:page}
+ #toc{break-after:page}
+ .doc{break-before:page}
+ .doc>h1.dt{font-size:17pt}
+ .doc h1{font-size:15pt}.doc h2{font-size:13.5pt}.doc h3{font-size:12pt}
+ h1,h2,h3,h4{break-after:avoid;break-inside:avoid}
+ pre,table,blockquote,img{break-inside:avoid}
+ tr{break-inside:avoid}
+ img{max-height:210mm}
+ pre{font-size:8.6pt}
+ table{font-size:8.8pt}
+ .backtop{display:none}
+ a{color:inherit;text-decoration:none}
+}
+
+.det{border:1px solid #dbe3ec;border-left:4px solid #7aa7d6;background:#fbfdff;border-radius:6px;padding:6px 14px;margin:12px 0}
+.det-t{display:block;font-weight:700;color:#1d4e89;margin:4px 0 6px}
+.det-t::before{content:"▸ "}
+.det .det-t{margin-top:0}
+@media print{.det{break-inside:auto;background:#fbfdff}}
+
+#main,.doc{overflow-wrap:break-word}
+td,th{overflow-wrap:anywhere}
+pre{max-width:100%}
+.doc table{display:block;overflow-x:auto}
+@media print{.doc table{display:table;table-layout:fixed;width:100%}}
+
+#main{min-width:0;flex:1 1 auto}
+@media print{#layout{display:block}#main{min-width:0}}
+
+#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="../../../原始资料/26年同济CS预推免复习资料_离线完整版.html#s25">查看原始资料对应章节</a></p><div class="archive-note">本篇含“根据回忆补全的题目”、知识点讲解及模拟练习，不能视为完整原题。原解析可能有误，例如127结点满二叉树第7层64结点应为填满。</div><p>原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/pzbw7apkgl1q9et6">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/pzbw7apkgl1q9et6</a></p><article class="doc"><h2>第四题：数据库-SQL查询</h2>
+<h3>涉及知识点</h3>
+<h4>1. SQL基本查询</h4>
+<p><strong>SELECT语句结构</strong>：</p>
+<pre><code class="language-sql">SELECT [DISTINCT] 列名列表
+FROM 表名列表
+[WHERE 条件]
+[GROUP BY 分组列 [HAVING 分组条件]]
+[ORDER BY 排序列 [ASC|DESC]]
+[LIMIT 数量];
+</code></pre>
+<p><strong>执行顺序</strong>：</p>
+<ol>
+<li>FROM：确定数据源</li>
+<li>WHERE：过滤行</li>
+<li>GROUP BY：分组</li>
+<li>HAVING：过滤分组</li>
+<li>SELECT：选择列</li>
+<li>DISTINCT：去重</li>
+<li>ORDER BY：排序</li>
+<li>LIMIT：限制结果数量</li>
+</ol>
+<h4>2. 连接查询</h4>
+<p><strong>内连接（INNER JOIN）</strong>：</p>
+<pre><code class="language-sql">SELECT * FROM A INNER JOIN B ON A.id = B.a_id;
+-- 只返回匹配的行
+</code></pre>
+<p><strong>左外连接（LEFT JOIN）</strong>：</p>
+<pre><code class="language-sql">SELECT * FROM A LEFT JOIN B ON A.id = B.a_id;
+-- 返回左表所有行，右表没匹配的为NULL
+</code></pre>
+<p><strong>右外连接（RIGHT JOIN）</strong>：</p>
+<pre><code class="language-sql">SELECT * FROM A RIGHT JOIN B ON A.id = B.a_id;
+-- 返回右表所有行，左表没匹配的为NULL
+</code></pre>
+<p><strong>全外连接（FULL JOIN）</strong>：</p>
+<pre><code class="language-sql">SELECT * FROM A FULL JOIN B ON A.id = B.a_id;
+-- 返回两表所有行，没匹配的为NULL
+</code></pre>
+<p><strong>交叉连接（CROSS JOIN）</strong>：</p>
+<pre><code class="language-sql">SELECT * FROM A CROSS JOIN B;
+-- 笛卡尔积，A的每行与B的每行组合
+</code></pre>
+<h4>3. 子查询</h4>
+<p><strong>标量子查询</strong>：返回单个值</p>
+<pre><code class="language-sql">SELECT * FROM students 
+WHERE age &gt; (SELECT AVG(age) FROM students);
+</code></pre>
+<p><strong>列子查询</strong>：返回一列值，用IN/NOT IN</p>
+<pre><code class="language-sql">SELECT * FROM students 
+WHERE class_id IN (SELECT id FROM classes WHERE grade = 1);
+</code></pre>
+<p><strong>行子查询</strong>：返回一行</p>
+<pre><code class="language-sql">SELECT * FROM students 
+WHERE (age, score) = (SELECT MAX(age), MAX(score) FROM students);
+</code></pre>
+<p><strong>表子查询</strong>：返回一个表</p>
+<pre><code class="language-sql">SELECT * FROM (
+    SELECT name, score FROM students WHERE score &gt;= 60
+) AS passed_students;
+</code></pre>
+<p><strong>相关子查询</strong>：内层查询依赖外层</p>
+<pre><code class="language-sql">SELECT * FROM students s1
+WHERE score &gt; (SELECT AVG(score) FROM students s2 WHERE s2.class_id = s1.class_id);
+</code></pre>
+<h4>4. 聚合函数</h4>
+<ul>
+<li><strong>COUNT()</strong>：计数（COUNT(*) 包含NULL，COUNT(列) 不包含）</li>
+<li><strong>SUM()</strong>：求和</li>
+<li><strong>AVG()</strong>：平均值</li>
+<li><strong>MAX()/MIN()</strong>：最大/最小值</li>
+<li><strong>GROUP_CONCAT()</strong>：MySQL特有，连接字符串</li>
+</ul>
+<h4>5. 分组查询</h4>
+<p><strong>GROUP BY</strong>：按列分组</p>
+<pre><code class="language-sql">SELECT class_id, AVG(score) 
+FROM students 
+GROUP BY class_id;
+</code></pre>
+<p><strong>HAVING</strong>：过滤分组（聚合条件）</p>
+<pre><code class="language-sql">SELECT class_id, AVG(score) AS avg_score
+FROM students 
+GROUP BY class_id
+HAVING avg_score &gt; 80;
+</code></pre>
+<p><strong>WHERE vs HAVING</strong>：</p>
+<ul>
+<li>WHERE：分组前过滤行，不能用聚合函数</li>
+<li>HAVING：分组后过滤组，可以用聚合函数</li>
+</ul>
+<h4>6. 集合操作</h4>
+<p><strong>UNION</strong>：并集，自动去重</p>
+<pre><code class="language-sql">SELECT name FROM students
+UNION
+SELECT name FROM teachers;
+</code></pre>
+<p><strong>UNION ALL</strong>：并集，不去重</p>
+<pre><code class="language-sql">SELECT name FROM students
+UNION ALL
+SELECT name FROM teachers;
+</code></pre>
+<p><strong>INTERSECT</strong>：交集（MySQL不支持，用JOIN实现）<br><strong>EXCEPT</strong>：差集（MySQL不支持，用NOT IN实现）</p>
+<h4>7. 窗口函数（MySQL 8.0+）</h4>
+<p><strong>基本语法</strong>：</p>
+<pre><code class="language-sql">函数名() OVER (
+    [PARTITION BY 分区列]
+    [ORDER BY 排序列]
+    [ROWS/RANGE 窗口范围]
+)
+</code></pre>
+<p><strong>排名函数</strong>：</p>
+<ul>
+<li><strong>ROW_NUMBER()</strong>：连续排名（1,2,3,4）</li>
+<li><strong>RANK()</strong>：并列跳号（1,2,2,4）</li>
+<li><strong>DENSE_RANK()</strong>：并列连续（1,2,2,3）</li>
+</ul>
+<p><strong>聚合窗口函数</strong>：</p>
+<pre><code class="language-sql">SELECT name, score,
+    AVG(score) OVER (PARTITION BY class_id) AS class_avg,
+    SUM(score) OVER (ORDER BY score) AS running_total
+FROM students;
+</code></pre>
+<h4>8. 索引与优化</h4>
+<p><strong>索引类型</strong>：</p>
+<ul>
+<li><strong>主键索引</strong>：唯一且非空</li>
+<li><strong>唯一索引</strong>：值唯一</li>
+<li><strong>普通索引</strong>：加速查询</li>
+<li><strong>全文索引</strong>：文本搜索</li>
+<li><strong>组合索引</strong>：多列索引，遵循最左前缀原则</li>
+</ul>
+<p><strong>索引使用原则</strong>：</p>
+<ul>
+<li>WHERE、JOIN、ORDER BY的列适合建索引</li>
+<li>区分度高的列适合建索引</li>
+<li>频繁更新的列不适合建索引</li>
+<li>小表不需要索引</li>
+</ul>
+<p><strong>查询优化</strong>：</p>
+<ul>
+<li>避免SELECT *</li>
+<li>避免在WHERE中使用函数或计算</li>
+<li>使用EXPLAIN分析查询计划</li>
+<li>合理使用索引</li>
+<li>避免子查询（某些情况下改用JOIN）</li>
+</ul>
+<h3>根据回忆补全的题目</h3>
+<p><strong>题目</strong>：给定以下三个表：</p>
+<p><strong>学生表 students</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>class_id</th>
+<th>age</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>张三</td>
+<td>1</td>
+<td>20</td>
+<td>85</td>
+</tr>
+<tr>
+<td>2</td>
+<td>李四</td>
+<td>1</td>
+<td>21</td>
+<td>92</td>
+</tr>
+<tr>
+<td>3</td>
+<td>王五</td>
+<td>2</td>
+<td>20</td>
+<td>78</td>
+</tr>
+<tr>
+<td>4</td>
+<td>赵六</td>
+<td>2</td>
+<td>22</td>
+<td>88</td>
+</tr>
+<tr>
+<td>5</td>
+<td>钱七</td>
+<td>3</td>
+<td>21</td>
+<td>95</td>
+</tr>
+<tr>
+<td>6</td>
+<td>孙八</td>
+<td>NULL</td>
+<td>20</td>
+<td>60</td>
+</tr>
+</tbody></table>
+<p><strong>班级表 classes</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>teacher_id</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>软件1班</td>
+<td>101</td>
+</tr>
+<tr>
+<td>2</td>
+<td>软件2班</td>
+<td>102</td>
+</tr>
+<tr>
+<td>3</td>
+<td>软件3班</td>
+<td>101</td>
+</tr>
+</tbody></table>
+<p><strong>教师表 teachers</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>subject</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>101</td>
+<td>王老师</td>
+<td>数据库</td>
+</tr>
+<tr>
+<td>102</td>
+<td>李老师</td>
+<td>算法</td>
+</tr>
+<tr>
+<td>103</td>
+<td>张老师</td>
+<td>网络</td>
+</tr>
+</tbody></table>
+<p><strong>问题</strong>：</p>
+<ol>
+<li>查询每个班级的平均分，要求显示班级名称和平均分，按平均分降序排列</li>
+<li>查询选修了王老师课程的所有学生姓名</li>
+<li>查询分数高于本班平均分的学生姓名、班级名称和分数</li>
+<li>查询每个班级分数最高的学生信息（使用窗口函数）</li>
+<li>查询没有分配班级的学生，以及没有学生的班级（使用FULL JOIN，若数据库不支持则用UNION）</li>
+</ol>
+<h3>详细解析</h3>
+<h4>解答1：查询每个班级的平均分</h4>
+<pre><code class="language-sql">SELECT 
+    c.name AS class_name,
+    AVG(s.score) AS avg_score
+FROM students s
+INNER JOIN classes c ON s.class_id = c.id
+GROUP BY c.id, c.name
+ORDER BY avg_score DESC;
+</code></pre>
+<p><strong>结果</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>class_name</th>
+<th>avg_score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>软件3班</td>
+<td>95.00</td>
+</tr>
+<tr>
+<td>软件1班</td>
+<td>88.50</td>
+</tr>
+<tr>
+<td>软件2班</td>
+<td>83.00</td>
+</tr>
+</tbody></table>
+<p><strong>要点</strong>：</p>
+<ul>
+<li>使用INNER JOIN排除了class_id为NULL的学生（孙八）</li>
+<li>GROUP BY需要包含c.id（主键）</li>
+<li>别名在ORDER BY中可用</li>
+</ul>
+<h4>解答2：查询选修王老师课程的学生</h4>
+<pre><code class="language-sql">SELECT DISTINCT s.name
+FROM students s
+INNER JOIN classes c ON s.class_id = c.id
+INNER JOIN teachers t ON c.teacher_id = t.id
+WHERE t.name = '王老师';
+</code></pre>
+<p><strong>结果</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>张三</td>
+</tr>
+<tr>
+<td>李四</td>
+</tr>
+<tr>
+<td>钱七</td>
+</tr>
+</tbody></table>
+<p><strong>要点</strong>：</p>
+<ul>
+<li>三表连接：students → classes → teachers</li>
+<li>使用DISTINCT去除可能的重复（虽然此例不会重复）</li>
+</ul>
+<p><strong>另一种写法（子查询）</strong>：</p>
+<pre><code class="language-sql">SELECT name
+FROM students
+WHERE class_id IN (
+    SELECT c.id
+    FROM classes c
+    INNER JOIN teachers t ON c.teacher_id = t.id
+    WHERE t.name = '王老师'
+);
+</code></pre>
+<h4>解答3：查询分数高于本班平均分的学生</h4>
+<pre><code class="language-sql">SELECT 
+    s.name,
+    c.name AS class_name,
+    s.score
+FROM students s
+INNER JOIN classes c ON s.class_id = c.id
+WHERE s.score &gt; (
+    SELECT AVG(score)
+    FROM students s2
+    WHERE s2.class_id = s.class_id
+);
+</code></pre>
+<p><strong>结果</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>class_name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>李四</td>
+<td>软件1班</td>
+<td>92</td>
+</tr>
+<tr>
+<td>赵六</td>
+<td>软件2班</td>
+<td>88</td>
+</tr>
+</tbody></table>
+<p><strong>要点</strong>：</p>
+<ul>
+<li>相关子查询：内层依赖外层的class_id</li>
+<li>对每个学生，子查询计算其班级的平均分</li>
+<li>class_id为NULL的学生被排除（INNER JOIN）</li>
+</ul>
+<p><strong>另一种写法（窗口函数）</strong>：</p>
+<pre><code class="language-sql">SELECT name, class_name, score
+FROM (
+    SELECT 
+        s.name,
+        c.name AS class_name,
+        s.score,
+        AVG(s.score) OVER (PARTITION BY s.class_id) AS class_avg
+    FROM students s
+    INNER JOIN classes c ON s.class_id = c.id
+) AS t
+WHERE score &gt; class_avg;
+</code></pre>
+<h4>解答4：查询每个班级分数最高的学生（窗口函数）</h4>
+<pre><code class="language-sql">SELECT name, class_name, score
+FROM (
+    SELECT 
+        s.name,
+        c.name AS class_name,
+        s.score,
+        RANK() OVER (PARTITION BY s.class_id ORDER BY s.score DESC) AS rank_in_class
+    FROM students s
+    INNER JOIN classes c ON s.class_id = c.id
+) AS ranked
+WHERE rank_in_class = 1;
+</code></pre>
+<p><strong>结果</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>class_name</th>
+<th>score</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>李四</td>
+<td>软件1班</td>
+<td>92</td>
+</tr>
+<tr>
+<td>赵六</td>
+<td>软件2班</td>
+<td>88</td>
+</tr>
+<tr>
+<td>钱七</td>
+<td>软件3班</td>
+<td>95</td>
+</tr>
+</tbody></table>
+<p><strong>要点</strong>：</p>
+<ul>
+<li>PARTITION BY class_id：按班级分区</li>
+<li>ORDER BY score DESC：分数降序</li>
+<li>RANK()：排名（如有并列最高分，都会返回）</li>
+<li>如只要一个学生，用ROW_NUMBER()</li>
+</ul>
+<p><strong>不用窗口函数的写法</strong>：</p>
+<pre><code class="language-sql">SELECT s.name, c.name AS class_name, s.score
+FROM students s
+INNER JOIN classes c ON s.class_id = c.id
+WHERE s.score = (
+    SELECT MAX(score)
+    FROM students s2
+    WHERE s2.class_id = s.class_id
+);
+</code></pre>
+<h4>解答5：查询未分配班级的学生和无学生的班级</h4>
+<p><strong>MySQL不支持FULL JOIN，用UNION实现</strong>：</p>
+<pre><code class="language-sql">-- 未分配班级的学生
+SELECT s.name AS name, '学生' AS type, '未分配班级' AS status
+FROM students s
+WHERE s.class_id IS NULL
+
+UNION
+
+-- 没有学生的班级
+SELECT c.name AS name, '班级' AS type, '无学生' AS status
+FROM classes c
+LEFT JOIN students s ON c.id = s.class_id
+WHERE s.id IS NULL;
+</code></pre>
+<p><strong>结果</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>type</th>
+<th>status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>孙八</td>
+<td>学生</td>
+<td>未分配班级</td>
+</tr>
+</tbody></table>
+<p><strong>要点</strong>：</p>
+<ul>
+<li>第一部分：WHERE class_id IS NULL找未分配学生</li>
+<li>第二部分：LEFT JOIN后WHERE s.id IS NULL找无学生班级</li>
+<li>UNION合并结果</li>
+</ul>
+<p><strong>如果数据库支持FULL JOIN</strong>：</p>
+<pre><code class="language-sql">SELECT 
+    COALESCE(s.name, c.name) AS name,
+    CASE 
+        WHEN s.class_id IS NULL THEN '学生-未分配班级'
+        WHEN s.id IS NULL THEN '班级-无学生'
+    END AS status
+FROM students s
+FULL OUTER JOIN classes c ON s.class_id = c.id
+WHERE s.class_id IS NULL OR s.id IS NULL;
+</code></pre>
+<h3>模拟练习题</h3>
+<h4>练习1</h4>
+<p>给定订单表orders(id, user_id, amount, order_date)和用户表users(id, name, city)。</p>
+<p>编写SQL查询：</p>
+<ol>
+<li>每个城市的总订单金额，按金额降序</li>
+<li>查询订单金额超过该用户平均订单金额的订单</li>
+<li>查询连续3天都有下单的用户</li>
+</ol>
+<p>点击查看答案</p>
+<p><strong>1) 每个城市总订单金额</strong>：SELECT u.city, SUM(o.amount) AS total_amount FROM orders o INNER JOIN users u ON o.user_id = u.id GROUP BY u.city ORDER BY total_amount DESC; <strong>2) 订单金额超过用户平均</strong>：SELECT o.* FROM orders o WHERE o.amount &gt; ( SELECT AVG(amount) FROM orders o2 WHERE o2.user_id = o.user_id ); <strong>3) 连续3天都有下单的用户</strong>：SELECT DISTINCT o1.user_id FROM orders o1 INNER JOIN orders o2 ON o1.user_id = o2.user_id AND o2.order_date = DATE_ADD(o1.order_date, INTERVAL 1 DAY) INNER JOIN orders o3 ON o1.user_id = o3.user_id AND o3.order_date = DATE_ADD(o1.order_date, INTERVAL 2 DAY); 或使用窗口函数（更高效）：SELECT DISTINCT user_id FROM ( SELECT user_id, order_date, LAG(order_date, 1) OVER (PARTITION BY user_id ORDER BY order_date) AS prev1, LAG(order_date, 2) OVER (PARTITION BY user_id ORDER BY order_date) AS prev2 FROM (SELECT DISTINCT user_id, order_date FROM orders) AS daily_orders ) AS t WHERE DATEDIFF(order_date, prev1) = 1 AND DATEDIFF(prev1, prev2) = 1;</p>
+<h4>练习2</h4>
+<p>解释以下查询的区别：</p>
+<pre><code class="language-sql">-- 查询A
+SELECT * FROM students WHERE class_id IN (SELECT id FROM classes WHERE grade = 1);
+
+-- 查询B
+SELECT * FROM students WHERE EXISTS (SELECT 1 FROM classes WHERE id = students.class_id AND grade = 1);
+
+-- 查询C
+SELECT s.* FROM students s INNER JOIN classes c ON s.class_id = c.id WHERE c.grade = 1;
+</code></pre>
+<p>点击查看答案</p>
+<p><strong>功能上</strong>：三个查询结果相同，都是查询1年级班级的学生。 <strong>执行方式</strong>： <strong>查询A（IN子查询）</strong>：- 先执行子查询，得到1年级班级id列表 - 再在students表中查找class_id在列表中的记录 - 适合子查询结果集小的情况 <strong>查询B（EXISTS相关子查询）</strong>：- 对students的每一行，执行子查询检查是否存在匹配 - EXISTS只关心是否存在，找到第一个匹配就返回TRUE - 适合外层表小、内层表大的情况 - 如果有索引，性能通常最好 <strong>查询C（JOIN）</strong>：- 直接连接两表，通过ON条件和WHERE过滤 - 最直观的写法 - 如果有合适索引，性能很好 - 如果students.class_id和classes.id都有索引，通常最快 <strong>性能对比</strong>（一般情况）：- 小表驱动大表：EXISTS &gt; IN &gt; JOIN - 大表驱动小表：JOIN &gt; IN &gt; EXISTS - 有索引且数据量大：JOIN ≈ EXISTS &gt; IN - 现代数据库优化器可能将它们优化成相同执行计划 <strong>推荐</strong>：- 默认使用JOIN（最清晰） - 需要检查"存在"语义时用EXISTS - 子查询结果确定很小时用IN </p>
+<hr>
+</article></main></body></html>

@@ -1,0 +1,398 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>考研复试-回忆与解析</title><style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--line:#e3e6ea;--accent:#0f6fc5;--code-bg:#f6f8fa;}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--fg);background:#fff;
+ font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB",-apple-system,"Segoe UI",Arial,sans-serif;
+ font-size:15px;line-height:1.75;}
+#layout{display:flex}
+#side{position:fixed;top:0;left:0;width:290px;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px 40px;font-size:13px}
+#side .bk{font-weight:700;font-size:15px;padding:6px 8px 10px;line-height:1.4}
+#side .meta{color:var(--muted);font-size:11px;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+#side a{display:block;color:#333;text-decoration:none;padding:3px 8px;border-radius:4px;line-height:1.5}
+#side a:hover{background:#eef3f8;color:var(--accent)}
+#side .g{font-weight:600;color:#111;padding:8px 8px 3px;margin-top:4px}
+#side .d1{padding-left:20px}#side .d2{padding-left:34px}#side .d3{padding-left:48px}
+#main{margin-left:290px;padding:36px 46px 120px;max-width:900px}
+.cover{padding:60px 0 30px;border-bottom:2px solid var(--fg)}
+.cover h1{font-size:30px;margin:0 0 10px}
+.cover .sub{color:var(--muted);font-size:13px;line-height:1.9}
+#toc{margin:26px 0 0}
+#toc h2{font-size:20px;border:0;margin:0 0 12px}
+#toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+#toc li{padding:2px 0;line-height:1.7}
+#toc li.t{font-weight:700;margin-top:10px}
+#toc li.l1{padding-left:16px}#toc li.l2{padding-left:32px}#toc li.l3{padding-left:48px}
+#toc a{color:#222;text-decoration:none;border-bottom:1px dotted #ccc}
+.doc{padding-top:8px}
+.doc>h1.dt{font-size:24px;margin:34px 0 6px;padding:0 0 8px;border-bottom:2px solid var(--line)}
+.doc .src{font-size:11px;color:var(--muted);margin:0 0 18px}
+.doc h1{font-size:21px;margin:26px 0 10px}
+.doc h2{font-size:19px;margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.doc h3{font-size:17px;margin:20px 0 8px}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px}
+p{margin:9px 0}
+img{max-width:100%;height:auto}
+img.tex{max-height:1.35em;vertical-align:-0.25em;display:inline}
+.missing-img{color:#b45309;background:#fff7ed;border:1px dashed #fdba74;border-radius:3px;padding:0 5px;font-size:12px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+pre code{white-space:pre-wrap;word-break:break-word}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:0.9em;background:var(--code-bg);padding:1px 4px;border-radius:3px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+th,td{border:1px solid #d5d9de;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f5f8;font-weight:600}
+blockquote{margin:12px 0;padding:4px 14px;border-left:4px solid #cfd8e3;background:#f8fafc;color:#374151}
+ul,ol{padding-left:26px;margin:9px 0}
+li{margin:3px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.backtop{font-size:12px;color:var(--muted);text-decoration:none;display:inline-block;margin-top:18px}
+@media print{
+ #side{display:none}
+ #main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.62}
+ @page{size:A4;margin:16mm 14mm}
+ .cover{padding:0 0 18px;break-after:page}
+ #toc{break-after:page}
+ .doc{break-before:page}
+ .doc>h1.dt{font-size:17pt}
+ .doc h1{font-size:15pt}.doc h2{font-size:13.5pt}.doc h3{font-size:12pt}
+ h1,h2,h3,h4{break-after:avoid;break-inside:avoid}
+ pre,table,blockquote,img{break-inside:avoid}
+ tr{break-inside:avoid}
+ img{max-height:210mm}
+ pre{font-size:8.6pt}
+ table{font-size:8.8pt}
+ .backtop{display:none}
+ a{color:inherit;text-decoration:none}
+}
+
+.det{border:1px solid #dbe3ec;border-left:4px solid #7aa7d6;background:#fbfdff;border-radius:6px;padding:6px 14px;margin:12px 0}
+.det-t{display:block;font-weight:700;color:#1d4e89;margin:4px 0 6px}
+.det-t::before{content:"▸ "}
+.det .det-t{margin-top:0}
+@media print{.det{break-inside:auto;background:#fbfdff}}
+
+#main,.doc{overflow-wrap:break-word}
+td,th{overflow-wrap:anywhere}
+pre{max-width:100%}
+.doc table{display:block;overflow-x:auto}
+@media print{.doc table{display:table;table-layout:fixed;width:100%}}
+
+#main{min-width:0;flex:1 1 auto}
+@media print{#layout{display:block}#main{min-width:0}}
+
+#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="../../../原始资料/26年同济CS预推免复习资料_离线完整版.html#s39">查看原始资料对应章节</a></p><div class="archive-note">回忆及整理资料，非官方试卷；原有题解和补编内容未经逐题校验。</div><p>原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/zvzn0884dtltg0bs">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/zvzn0884dtltg0bs</a></p><article class="doc"><h1 class="dt">23年考研复试笔试_题目与解答</h1><p class="src">原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/zvzn0884dtltg0bs">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/zvzn0884dtltg0bs</a></p><h2>一、专业课部分</h2>
+<h3>1. 超市管理数据库（10 分）</h3>
+<p>在超市管理的简化应用中，有三个实体集：超市、产品、仓库。</p>
+<ul>
+<li>超市：超市编号、超市名字、超市地址、电话、经理；</li>
+<li>产品：产品编号、产品名字、价格、生产商、生产日期；</li>
+<li>仓库：仓库编号、仓库名称、仓库地址、管理员。</li>
+</ul>
+<p>超市和产品通过二元关系集“销售”相关，产品和仓库通过二元关系集“库存”相关。</p>
+<ul>
+<li>销售属性：销售日期、销售数量；</li>
+<li>库存属性：入库时间、进价、库存数量。</li>
+</ul>
+<p>要求：</p>
+<p>a. 给出相应的 ER 图；</p>
+<p>b. 创建相应的关系模式，并指出主键和外键；</p>
+<p>c. 查询销售价格在 100 至 500 元之间、仓库库存少于 20 件的超市名称和数量。</p>
+<h4>解答</h4>
+<h4>a. ER 图</h4>
+<p><img src="https://cdn.nlark.com/yuque/0/2026/png/27371136/1787895427157-9a4ea96a-376a-485c-b0fc-d87a49e027c4.png" alt="" loading="eager" referrerpolicy="no-referrer"></p>
+<p>“销售”和“库存”均为多对多关系；若业务规定同一超市同一产品每天只有一条销售记录，可用 <code>(supermarket_id, product_id, sale_date)</code> 作销售主键。库存若允许同一产品多次入库，则把 <code>stock_in_time</code> 纳入主键。</p>
+<h4>b. 关系模式</h4>
+<pre><code class="language-latex">Supermarket(
+    supermarket_id PK,
+    name, address, phone, manager
+)
+
+Product(
+    product_id PK,
+    name, price, manufacturer, production_date
+)
+
+Warehouse(
+    warehouse_id PK,
+    name, address, manager
+)
+
+Sales(
+    supermarket_id FK -&gt; Supermarket(supermarket_id),
+    product_id FK -&gt; Product(product_id),
+    sale_date,
+    sale_quantity,
+    PK(supermarket_id, product_id, sale_date)
+)
+
+Inventory(
+    product_id FK -&gt; Product(product_id),
+    warehouse_id FK -&gt; Warehouse(warehouse_id),
+    stock_in_time,
+    purchase_price,
+    stock_quantity,
+    PK(product_id, warehouse_id, stock_in_time)
+)
+</code></pre>
+<h4>c. SQL</h4>
+<p>若“数量”指满足条件的销售数量总和，可写为：</p>
+<pre><code class="language-sql">SELECT s.name,
+       SUM(sa.sale_quantity) AS quantity
+FROM Supermarket AS s
+JOIN Sales AS sa
+  ON sa.supermarket_id = s.supermarket_id
+JOIN Product AS p
+  ON p.product_id = sa.product_id
+JOIN Inventory AS i
+  ON i.product_id = p.product_id
+WHERE p.price BETWEEN 100 AND 500
+  AND i.stock_quantity &lt; 20
+GROUP BY s.supermarket_id, s.name;
+</code></pre>
+<p>如果题意中的“数量”是每条销售记录的数量而非汇总，去掉 <code>SUM</code> 和 <code>GROUP BY</code>，直接选择 <code>sa.sale_quantity</code> 即可。若一个产品在多个仓库均满足库存条件，为避免重复计数，可将库存条件改成 <code>EXISTS</code> 子查询。</p>
+<h3>2. 函数依赖与 3NF（10 分）</h3>
+<p>关系 <code>R(A,B,C,D,E,F)</code> 满足：</p>
+<pre><code class="language-latex">F = { ABD -&gt; E, AB -&gt; CF, B -&gt; F, C -&gt; DF, CF -&gt; E, D -&gt; F }
+</code></pre>
+<h4>(1) 求 <code>(BC)+</code>、<code>(AB)+</code></h4>
+<p>先将右部拆成单属性：</p>
+<pre><code class="language-latex">ABD -&gt; E, AB -&gt; C, AB -&gt; F, B -&gt; F,
+C -&gt; D, C -&gt; F, CF -&gt; E, D -&gt; F
+</code></pre>
+<ul>
+<li><code>(BC)+</code>：初始 <code>{B,C}</code>；由 <code>C -&gt; D,F</code> 得到 <code>D,F</code>；由 <code>CF -&gt; E</code> 得到 <code>E</code>。因此</li>
+</ul>
+<pre><code class="language-latex">(BC)+ = {B,C,D,E,F}
+</code></pre>
+<ul>
+<li><code>(AB)+</code>：由 <code>AB -&gt; C,F</code> 得到 <code>C,F</code>；由 <code>C -&gt; D</code> 得到 <code>D</code>；由 <code>CF -&gt; E</code> 得到 <code>E</code>。因此</li>
+</ul>
+<pre><code class="language-latex">(AB)+ = {A,B,C,D,E,F}
+</code></pre>
+<p><code>AB</code> 是该关系的候选码。</p>
+<h4>(2) 正则覆盖（最小覆盖）</h4>
+<p>去除冗余后可取：</p>
+<pre><code class="language-latex">Fc = { AB -&gt; C, B -&gt; F, C -&gt; D, C -&gt; E, D -&gt; F }
+</code></pre>
+<p>说明：<code>AB -&gt; F</code> 可由 <code>B -&gt; F</code> 推出；<code>C -&gt; F</code> 可由 <code>C -&gt; D</code>、<code>D -&gt; F</code> 推出；<code>CF -&gt; E</code> 中的 <code>F</code> 是左部冗余，可改为 <code>C -&gt; E</code>；<code>ABD -&gt; E</code> 可由 <code>AB -&gt; C</code>、<code>C -&gt; E</code> 推出。</p>
+<h4>(3) 无损且保持依赖的 3NF 分解</h4>
+<p>按正则覆盖综合：</p>
+<pre><code class="language-latex">R1(A,B,C)   // 对应 AB -&gt; C
+R2(B,F)     // 对应 B -&gt; F
+R3(C,D,E)   // 对应 C -&gt; D、C -&gt; E
+R4(D,F)     // 对应 D -&gt; F
+</code></pre>
+<p><code>R1</code> 含候选码 <code>AB</code>，因此综合算法保证无损连接；每条最小覆盖中的函数依赖都在某个分解关系中得到保持。</p>
+<h3>3. 句子、句型、短语的定义（6 分）</h3>
+<ul>
+<li><strong>句子（sentence）</strong>：由一个或多个单词按语法规则组成、能够表达相对完整意义的语言单位。</li>
+<li><strong>句型（sentence pattern）</strong>：句子的结构类型或抽象语法模板，例如 <code>S -&gt; NP VP</code>，它描述成分及其组合关系，而不是某个具体句子。</li>
+<li><strong>短语（phrase）</strong>：句型或句子中由一个语法单位派生出的连续符号串；在编译原理中，若 <code>S =&gt;* αAγ</code> 且 <code>A =&gt;+ β</code>，则 <code>β</code> 是句型 <code>αβγ</code> 的一个短语。</li>
+</ul>
+<h3>4. 正则表达式转 NFA、确定化与最小化（8 分）</h3>
+<p>正则表达式：</p>
+<pre><code class="language-latex">(b | c)(a | b)*ac
+</code></pre>
+<h4>NFA</h4>
+<p>可使用以下等价 NFA（无需 ε 边）：</p>
+<pre><code class="language-latex">q0 --b,c--&gt; q1
+q1 --a,b--&gt; q1
+q1 --a--&gt; q2
+q2 --c--&gt; q3   (q3 为终态)
+</code></pre>
+<p>其中从 <code>q1</code> 读入 <code>a</code> 时可以同时走循环边或走向 <code>q2</code>，体现 <code>(a|b)*</code> 后接 <code>ac</code> 的非确定性。</p>
+<h4>子集构造得到 DFA</h4>
+<p>令 <code>D = ∅</code> 为死状态，<code>S0={q0}</code>、<code>S1={q1}</code>、<code>S2={q1,q2}</code>、<code>S3={q3}</code>：</p>
+<table>
+<thead>
+<tr>
+<th>DFA 状态</th>
+<th>a</th>
+<th>b</th>
+<th>c</th>
+<th>是否终态</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>S0={q0}</code></td>
+<td><code>D</code></td>
+<td><code>S1</code></td>
+<td><code>S1</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>S1={q1}</code></td>
+<td><code>S2</code></td>
+<td><code>S1</code></td>
+<td><code>D</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>S2={q1,q2}</code></td>
+<td><code>S2</code></td>
+<td><code>S1</code></td>
+<td><code>S3</code></td>
+<td>否</td>
+</tr>
+<tr>
+<td><code>S3={q3}</code></td>
+<td><code>D</code></td>
+<td><code>D</code></td>
+<td><code>D</code></td>
+<td>是</td>
+</tr>
+<tr>
+<td><code>D=∅</code></td>
+<td><code>D</code></td>
+<td><code>D</code></td>
+<td><code>D</code></td>
+<td>否</td>
+</tr>
+</tbody></table>
+<h4>最小化</h4>
+<p>初始划分为 <code>{S3}</code> 与 <code>{S0,S1,S2,D}</code>。按转移到终态/非终态及后续分区继续细分后，五个状态均不可合并，因此上表 DFA 已是最小 DFA。</p>
+<h3>5. 基本块目标代码、RVALUE 与 AVALUE（6 分）</h3>
+<p>中间代码：</p>
+<pre><code class="language-latex">1. T := A - B
+2. U := A - C
+3. V := T + U
+4. W := V + U
+</code></pre>
+<p>已知基本块出口处 <code>W</code> 活跃，只有 <code>R0</code>、<code>R1</code> 可用。一个无冗余存取的目标代码为：</p>
+<pre><code class="language-plain">LD  R0, A       ; R0 = A
+SUB R0, B       ; R0 = T = A-B
+LD  R1, A       ; R1 = A
+SUB R1, C       ; R1 = U = A-C
+ADD R0, R1      ; R0 = V = T+U
+ADD R0, R1      ; R0 = W = V+U
+ST  W, R0       ; W 在出口处活跃，写回内存
+</code></pre>
+<p>以下只列出关键变化（内存中的原变量仍保留其原地址）：</p>
+<table>
+<thead>
+<tr>
+<th>时刻</th>
+<th><code>RVALUE(R0)</code></th>
+<th><code>RVALUE(R1)</code></th>
+<th>主要 AVALUE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>初始</td>
+<td><code>{}</code></td>
+<td><code>{}</code></td>
+<td><code>A:{A}, B:{B}, C:{C}</code></td>
+</tr>
+<tr>
+<td><code>LD R0,A</code> 后</td>
+<td><code>{A}</code></td>
+<td><code>{}</code></td>
+<td><code>A:{A,R0}</code></td>
+</tr>
+<tr>
+<td><code>SUB R0,B</code> 后</td>
+<td><code>{T}</code></td>
+<td><code>{}</code></td>
+<td><code>T:{R0}</code>，<code>A:{A}</code></td>
+</tr>
+<tr>
+<td><code>LD R1,A</code> 后</td>
+<td><code>{T}</code></td>
+<td><code>{A}</code></td>
+<td><code>A:{A,R1}</code>，<code>T:{R0}</code></td>
+</tr>
+<tr>
+<td><code>SUB R1,C</code> 后</td>
+<td><code>{T}</code></td>
+<td><code>{U}</code></td>
+<td><code>T:{R0}</code>，<code>U:{R1}</code></td>
+</tr>
+<tr>
+<td><code>ADD R0,R1</code> 后</td>
+<td><code>{V}</code></td>
+<td><code>{U}</code></td>
+<td><code>V:{R0}</code>，<code>U:{R1}</code></td>
+</tr>
+<tr>
+<td><code>ADD R0,R1</code> 后</td>
+<td><code>{W}</code></td>
+<td><code>{U}</code>（已死）</td>
+<td><code>W:{R0}</code></td>
+</tr>
+<tr>
+<td><code>ST W,R0</code> 后</td>
+<td><code>{W}</code></td>
+<td><code>{U}</code>（已死）</td>
+<td><code>W:{W,R0}</code></td>
+</tr>
+</tbody></table>
+<p><code>T</code>、<code>V</code> 和 <code>U</code> 在基本块出口不活跃，因此不必额外写回；<code>W</code> 必须写回。</p>
+<h3>6. 第 k 大的数（10 分）</h3>
+<h4>a. 每次找最大值并删除</h4>
+<p>若数组未排序，每次线性扫描找最大值需要 <code>O(n)</code>，删除后规模递减，总时间：</p>
+<pre><code class="language-latex">O(n + (n-1) + ... + (n-k+1)) = O(kn)
+</code></pre>
+<p>若数组删除还需搬移元素，仍为 <code>O(kn)</code>；辅助空间为 <code>O(1)</code>（忽略输入存储）。</p>
+<h4>b. 排序后取第 k 大</h4>
+<p>用比较排序将数组按升序排列，返回下标 <code>n-k</code> 的元素：时间 <code>O(n log n)</code>，空间取决于排序实现（原地快排平均 <code>O(log n)</code>，归并排序 <code>O(n)</code>）。</p>
+<h4>自行设计：大小为 k 的最小堆</h4>
+<p>维护当前见过元素中最大的 <code>k</code> 个数，堆顶就是第 <code>k</code> 大：</p>
+<pre><code class="language-latex">KthLargest(A, k):
+    H = empty min-heap
+    for x in A:
+        if size(H) &lt; k:
+            push(H, x)
+        else if x &gt; min(H):
+            pop_min(H)
+            push(H, x)
+    return min(H)
+</code></pre>
+<p>建堆阶段可视为逐个插入，时间 <code>O(n log k)</code>，空间 <code>O(k)</code>。当 <code>k</code> 很小，该方法优于完整排序；也可使用 Quickselect，平均 <code>O(n)</code>、最坏 <code>O(n^2)</code>，用 median-of-medians 选枢轴可保证最坏 <code>O(n)</code>。</p>
+<h3>7. 有距离约束的最大收益（10 分）</h3>
+<p>街上有按位置递增排列的 <code>n</code> 个位置，位置 <code>i</code> 的收益为 <code>p[i]</code>，任意两家店距离必须大于 <code>d</code>，求最大总收益。</p>
+<p>令</p>
+<pre><code class="language-latex">prev[i] = max { j &lt; i | position[i] - position[j] &gt; d }
+</code></pre>
+<p>不存在时令 <code>prev[i]=0</code>。设 <code>DP[i]</code> 为只考虑前 <code>i</code> 个位置的最大收益，则：</p>
+<pre><code class="language-latex">DP[0] = 0
+DP[i] = max(DP[i-1], p[i] + DP[prev[i]])
+</code></pre>
+<p>伪代码：</p>
+<pre><code class="language-latex">MaxProfit(position[1..n], p[1..n], d):
+    for i = 1..n:
+        prev[i] = binary_search_last_j(
+            position[j] &lt;= position[i] - d - epsilon)
+    DP[0] = 0
+    for i = 1..n:
+        DP[i] = max(DP[i-1], p[i] + DP[prev[i]])
+    return DP[n]
+</code></pre>
+<p>若位置为整数且“距离大于 <code>d</code>”等价于 <code>position[j] &lt;= position[i]-d-1</code>，将 <code>epsilon</code> 换成 <code>1</code>。二分查找每个 <code>prev[i]</code> 得 <code>O(n log n)</code> 时间，DP 为 <code>O(n)</code>，总空间 <code>O(n)</code>；位置已经排序时用双指针可把前驱查找降为 <code>O(n)</code>。</p>
+<h2>二、英语部分</h2>
+<h3>题目</h3>
+<p>Please read the following paper and:</p>
+<p>a. give a brief summary;</p>
+<p>b. write a short research proposal.</p>
+<h3>阅读材料转录：<em>Artificial Intelligence &amp; Creativity: A Manifesto for Collaboration</em></h3>
+<p>Creativity is a phenomenon that is not unique to the human species, as it can be considered to be the guiding force in the evolution of our entire universe. In the dynamic universal creativity process, a potential for creative emergence can be recognized in four layers: material, biological, socio-cultural, and artificial. Creativity episodes occurring at different layers of complexity are possibly concatenated: this manifesto is specifically concerned with the interconnections between human-centered socio-cultural creativity and machine-centered artificial creativity.</p>
+<p>Interest in the field of AI has recently grown with the arrival of tools like ChatGPT and Midjourney, as well as Microsoft Bing and Google Bard. Reflections on artificial agents are much older, however, and include myths such as Talos and the Golem. Ada Lovelace even anticipated that a machine might compose elaborate music. In 1956 John McCarthy introduced the term AI; AI systems are distinguished by their ability to adapt and use information beyond a fixed sequence of programmed instructions.</p>
+<p>Generative AI (GAI) uses existing information to create new content. This capability affects creative occupations. Studies cited in the paper report that ChatGPT made college-educated professionals faster and improved the quality of their writing, while GitHub Copilot made professional programmers substantially faster without a statistically significant quality improvement. Other analyses suggest that telemarketing, legal services, financial investment, and insurance may be especially exposed. At the same time, plagiarism, factual errors, and fabricated references remain important weaknesses.</p>
+<p>The paper asks whether GAI is truly creative. AI-generated content is new in a practical sense, but it is built from pre-existing data, just as much human creativity builds on prior experience. GAI performs well on routine, patterned content, yet it is less reliable on disruptive and highly personal creative work. Humans contribute long-term motivation, curiosity, experience, and a personal point of view. The notion of creative intentionality is therefore central and remains debated.</p>
+<p>The manifesto advocates human-AI collaboration. AI can generate many candidate ideas during the “blind variation” stage of the Campbell-Simonton BVSR model. Humans should define and refine the problem at the beginning, then select, evaluate, modify, and validate outputs at the end. This is “assisted creativity”: AI is a collaborative creative agent, while human judgment remains essential.</p>
+<h3>参考作答：Brief summary</h3>
+<p>The manifesto argues that generative AI should be understood as a partner in human creativity rather than as an independent artist. AI systems can produce many plausible ideas quickly and can improve productivity in writing and programming. Nevertheless, their novelty is often limited by the structure of their training data, and they remain vulnerable to factual errors, plagiarism, and fabricated references. Human creators contribute intention, curiosity, experience, and the ability to pursue disruptive personal visions. The authors therefore propose a division of labor based on the BVSR model: AI performs large-scale blind variation, while humans define the problem, select promising results, revise them, and take final responsibility. The future is best described as assisted creativity, supported by careful human oversight.</p>
+<h3>参考作答：Short research proposal</h3>
+<p><strong>Title: Human-in-the-Loop Evaluation of AI-Assisted Creativity</strong></p>
+<p><strong>Background and objectives.</strong> Generative AI can produce many ideas in seconds, but speed does not necessarily imply originality, usefulness, or responsible authorship. This project will investigate when AI assistance improves creative performance and when it causes homogenization, factual errors, or over-reliance. It will focus on the interaction between human problem finding, AI idea generation, and human selection.</p>
+<p><strong>Research questions.</strong> (1) Does AI increase the novelty and usefulness of solutions compared with unaided work? (2) Does requiring users to write a problem definition before prompting improve final quality? (3) How do expertise and the number of generated candidates affect human selection? (4) Can provenance and fact-checking tools reduce errors without reducing creative value?</p>
+<p><strong>Method.</strong> We will recruit participants from design, writing, and software backgrounds. They will complete matched tasks under three conditions: no AI, AI brainstorming only, and AI brainstorming plus structured human review. Outputs will be evaluated blindly by independent experts using novelty, usefulness, coherence, and factuality scales. We will record time, revision history, prompt logs, and participants’ confidence. A mixed-effects model will test the effects of condition and expertise; qualitative interviews will examine perceived agency and authorship.</p>
+<p><strong>Expected contribution and ethics.</strong> The study should identify practical collaboration protocols that preserve human agency while exploiting AI’s breadth. All participants will provide informed consent, generated material will be checked for sensitive or copyrighted content, and results will report both benefits and failure cases. The outcome will be an evidence-based framework for responsible assisted creativity.</p>
+<h2>附录</h2>
+<p>英语部分<br>Please read the following two papers. And<br>a. give a brief summary.<br>b. write a short research proposal.<br>Artificial Intelligence &amp; Creativity: A Manifesto for Collaboration<br>Creativity is a phenomenon that is not unique to the human species, as it can be<br>considered to be the guiding force in the evolution of our entire universe. In the dynamic<br>universal creativity process, a potential for creative emergence can be recognized in<br>four layers: material, biological, socio-cultural, and artificial. Creativity episodes<br>occurring at different layers of complexity are possibly concatenated: this manifesto is<br>specifically concerned with the interconnections between human-centered socio-<br>cultural creativity and machine-centered artificial creativity.<br>Interest in the field of AI has recently grown with the arrival of new and already<br>popular tools like ChatGPT 1 and Mid-Journey 2 and even newer products steadily<br>moving onto the market, such as Microsoft’s Bing 3 and Google’s Bard. 4 However,<br>the reflections surrounding the advent of AI are much older, going back to the ancient<br>Greeks. Whether it is Talos (giant guardian of the Crete Island animated by Hephaistos),<br>Golem, or automatons, non-human “agents” led humans to question themselves about<br>their nature and conscience. More recently, during the first attempts to create computers,<br>Ada Lovelace, a pioneer of computer coding, nearly 100 years ago, proposed that a<br>machine “might compose elaborate and scientific pieces of music of any degree of<br>complexity or extent”. Following Lovelace’s idea, we can see that different “Generative”<br>artificial intelligence (GAI) tools illustrate that she was indeed right in foreseeing<br>programs that generate music “from scratch”, complete unfinished symphonies, imitate<br>voices, and even generate voices with tools like Murf.ai.<br>At a conference in 1956, John McCarthy proposed the term AI to describe machines<br>capable of reasoning, such as the “Logic Theorist” which was presented at that event<br>as one of the first AIs. Wang describes AI as a set of information processing systems<br>that can adapt to their environment while using the resources and knowledge available.<br>AI systems can be differentiated from other computerized systems because AIs have<br>fluid adaptation capabilities, sometimes going beyond what was initially programmed.<br>The arrival of GAI has recently changed the public’s interest in AI. GAI can be</p>
+<p>defined as a system that uses existing information to create new content. Being able to<br>create content from a user’s request is impressive and questions certain professional<br>practices related to “creative” jobs that were previously considered untouchable.<br>On March 2, 2023, an article entitled “AI to replace journalists at Springer” was<br>published in the Figaro. As per the report, two German newspapers—Bild and Die<br>Welt—are planning to introduce AI agents tore place some of their layout, proofreading,<br>and administration staff. This move is an example of “creative destruction,” a concept<br>introduced by the economist Joseph Schumpeter, where innovation creates value by<br>replacing outdated systems, such as human labor. But is it really the case? Should we<br>fear that AI will replace humans’ work? If this is highly plausible for certain professions<br>(as we have been able to observe since the second industrial revolution), perhaps this<br>will not concern higher-level jobs, including those that utilize creative thinking. The<br>relationship between AI and the creative process in the workplace has been recently<br>investigated.<br>Noy and Zhang (2023), for example, showed that college-educated professionals<br>(grant writers, consultants, data analysts, human resource professionals, and marketers)<br>who had to produce different types of documents related to their jobs were speedier and<br>showed better quality when they were using ChatGPT. The quality of their writing,<br>assessed by blinded professionals, was higher (+0.45 SD compared to the con-rol<br>group), and speed increased by 34% (10 minutes less than the control group at 27<br>minutes). Results also showed that, compared to the control group, participants were<br>more worried about the automation increases, more excited by AI, and more optimistic<br>about the impact of future advances. A second study of 95 professional computer<br>programmers investigated the role of AI in supporting developers in writing an HTTP<br>server in JavaScript . Whereas the control group was able to use the web and check<br>Stack Overflow or other well-known platforms to complete the task, the experimental<br>group had access to GitHub Copilot (an AI created by OpenAI-like ChatGPT applied<br>to the specific domain “Codex”). The group using AI was 55.8% faster (71.17 minutes<br>instead of 160.89 minutes), but with program quality being non-significantly higher in<br>the AI condition. Finally, Raj, and Sea-mans (2023) examined what kind of occupations<br>and which industries will be most affected by ChatGPT and other LLM (Large<br>Language Models, a type of GAI built using deep learning to generate and produce<br>relevant content; Lee, 2023). Using the AIOE Methodology, AI applications were<br>linked to human abilities based on data from the US Department of Labor. Results</p>
+<p>suggest that certain professions (such as telemarketers) or industries (such as legal<br>services, financial investments, and insurance) will be particularly vulnerable. That said,<br>it is important to note that current LLMs such as ChatGPT may not be as useful. For<br>example, instances of plagiarism, providing incorrect information, and even creating<br>fake references have been documented.<br>These articles are just a small part of the growing literature on AI and the changes<br>that are coming to our jobs, and some researchers and philosophers even speak of a<br>fourth industrial revolution, because the impact of these new technologies will be so<br>important for all professions. We cannot deny AI’s ability to engage in content creation,<br>but is generative AI truly creative?<br>“Generative” artificial intelligence systems create appropriate content that is “new”<br>in that these systems build on pre-existing images available in their databases. In this,<br>the AI is not unlike most, if not all, human creativity. People also build on, and<br>continuously reconfigure, their growing knowledge and experience. Like every day and<br>some workplace creativity by humans, the novelty of AI-generated work has tended to<br>be limited. In the case of content creation tasks, such as proposing a text describing a<br>soccer game, which has an established pattern, a GAI system in 2023 can handle it with<br>ease. As a first pass, these systems deserve recognition. Their productions are<br>conceptually similar to what we may expect from a large number of human participants.<br>Current AI systems do not hold up so well against more advanced creative work,<br>however. Their data-bases are vast but conventionally structured. In comparison, most<br>humans draw on much less information (e.g., previous works, examples from other<br>artists, creative outputs from colleagues, etc.) in their creative work, but one’s own<br>experience can lead to a personal elaboration which, in some cases, can lead to<br>disruptive results. In addition, people often spend decades or a lifetime searching,<br>practicing, elaborating, testing, and refining their points of view, styles, mediums,<br>etc.—work driven by extraordinary human motivation and curiosity. When interacting<br>with humans, AI becomes an influential factor in the creative process with possible<br>consequences (seldom examined) on the generated outcomes, the individuals<br>participating in the creative task, but also at the societal level. “Creative intentionality,”<br>the desire and drive of an individual to want to create something, remains an element<br>that is, for the moment, only present in humans. However, there is debate about the<br>notion of intentionality related to GAI and whether intentionality is required for work<br>to be recognized as creative.</p>
+<p>The goal of this manifesto is to suggest that human–AI collaboration can be<br>extraordinarily productive, while recognizing that vigilance will be necessary in regard<br>to both easily foreseen and unanticipated problems. Today’s AI systems excel at<br>producing a large number of proposals in record time. We can obtain a list of 20–40<br>ideas, a text on a specific topic, a poem, or a personalized computer image with just a<br>few clicks. In this collaboration, the human keeps a central role at two key moments of<br>the creative process: at the beginning and at the end. Indeed, at the beginning, the human<br>must engage in problem finding—identifying and exploring questions and fine-tuning<br>them to get a desired output. Thus, AI would assist in the problem development phase<br>of a creative process. Additionally, as mentioned before, the human takes on the role of<br>the estimator who evaluates the merits of the AI-generated productions and then refines,<br>modifies, and ultimately validates them. According to the Campbell-Simonton Blind<br>Variation and Selective Retention (BVSR) model AI can handle the “blind variation”<br>phase of idea generation, whereas the “selection” phase is primarily a human concern.<br>GAI can also provide feedback on an idea and even evaluate some aspects of human<br>creativity. At the moment, however, human evaluation remains the yardstick by which<br>AI evaluations are judged. We are in a new era of “assisted creativity,” namely AI is not<br>an independent creator in this sense, but rather a collaborative creative agent</p>
+</article></main></body></html>

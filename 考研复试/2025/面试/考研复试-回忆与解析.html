@@ -1,0 +1,153 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>考研复试-回忆与解析</title><style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--line:#e3e6ea;--accent:#0f6fc5;--code-bg:#f6f8fa;}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--fg);background:#fff;
+ font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB",-apple-system,"Segoe UI",Arial,sans-serif;
+ font-size:15px;line-height:1.75;}
+#layout{display:flex}
+#side{position:fixed;top:0;left:0;width:290px;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px 40px;font-size:13px}
+#side .bk{font-weight:700;font-size:15px;padding:6px 8px 10px;line-height:1.4}
+#side .meta{color:var(--muted);font-size:11px;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+#side a{display:block;color:#333;text-decoration:none;padding:3px 8px;border-radius:4px;line-height:1.5}
+#side a:hover{background:#eef3f8;color:var(--accent)}
+#side .g{font-weight:600;color:#111;padding:8px 8px 3px;margin-top:4px}
+#side .d1{padding-left:20px}#side .d2{padding-left:34px}#side .d3{padding-left:48px}
+#main{margin-left:290px;padding:36px 46px 120px;max-width:900px}
+.cover{padding:60px 0 30px;border-bottom:2px solid var(--fg)}
+.cover h1{font-size:30px;margin:0 0 10px}
+.cover .sub{color:var(--muted);font-size:13px;line-height:1.9}
+#toc{margin:26px 0 0}
+#toc h2{font-size:20px;border:0;margin:0 0 12px}
+#toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+#toc li{padding:2px 0;line-height:1.7}
+#toc li.t{font-weight:700;margin-top:10px}
+#toc li.l1{padding-left:16px}#toc li.l2{padding-left:32px}#toc li.l3{padding-left:48px}
+#toc a{color:#222;text-decoration:none;border-bottom:1px dotted #ccc}
+.doc{padding-top:8px}
+.doc>h1.dt{font-size:24px;margin:34px 0 6px;padding:0 0 8px;border-bottom:2px solid var(--line)}
+.doc .src{font-size:11px;color:var(--muted);margin:0 0 18px}
+.doc h1{font-size:21px;margin:26px 0 10px}
+.doc h2{font-size:19px;margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.doc h3{font-size:17px;margin:20px 0 8px}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px}
+p{margin:9px 0}
+img{max-width:100%;height:auto}
+img.tex{max-height:1.35em;vertical-align:-0.25em;display:inline}
+.missing-img{color:#b45309;background:#fff7ed;border:1px dashed #fdba74;border-radius:3px;padding:0 5px;font-size:12px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+pre code{white-space:pre-wrap;word-break:break-word}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:0.9em;background:var(--code-bg);padding:1px 4px;border-radius:3px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+th,td{border:1px solid #d5d9de;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f5f8;font-weight:600}
+blockquote{margin:12px 0;padding:4px 14px;border-left:4px solid #cfd8e3;background:#f8fafc;color:#374151}
+ul,ol{padding-left:26px;margin:9px 0}
+li{margin:3px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.backtop{font-size:12px;color:var(--muted);text-decoration:none;display:inline-block;margin-top:18px}
+@media print{
+ #side{display:none}
+ #main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.62}
+ @page{size:A4;margin:16mm 14mm}
+ .cover{padding:0 0 18px;break-after:page}
+ #toc{break-after:page}
+ .doc{break-before:page}
+ .doc>h1.dt{font-size:17pt}
+ .doc h1{font-size:15pt}.doc h2{font-size:13.5pt}.doc h3{font-size:12pt}
+ h1,h2,h3,h4{break-after:avoid;break-inside:avoid}
+ pre,table,blockquote,img{break-inside:avoid}
+ tr{break-inside:avoid}
+ img{max-height:210mm}
+ pre{font-size:8.6pt}
+ table{font-size:8.8pt}
+ .backtop{display:none}
+ a{color:inherit;text-decoration:none}
+}
+
+.det{border:1px solid #dbe3ec;border-left:4px solid #7aa7d6;background:#fbfdff;border-radius:6px;padding:6px 14px;margin:12px 0}
+.det-t{display:block;font-weight:700;color:#1d4e89;margin:4px 0 6px}
+.det-t::before{content:"▸ "}
+.det .det-t{margin-top:0}
+@media print{.det{break-inside:auto;background:#fbfdff}}
+
+#main,.doc{overflow-wrap:break-word}
+td,th{overflow-wrap:anywhere}
+pre{max-width:100%}
+.doc table{display:block;overflow-x:auto}
+@media print{.doc table{display:table;table-layout:fixed;width:100%}}
+
+#main{min-width:0;flex:1 1 auto}
+@media print{#layout{display:block}#main{min-width:0}}
+
+#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="../../../原始资料/26年同济CS预推免复习资料_离线完整版.html#s33">查看原始资料对应章节</a></p><div class="archive-note">回忆及整理资料，非官方试卷；原有题解和补编内容未经逐题校验。</div><p>原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/ugfntr4g55cgreo4">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/ugfntr4g55cgreo4</a></p><article class="doc"><h1 class="dt">25年考研复试面试回忆</h1><p class="src">原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/ugfntr4g55cgreo4">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/ugfntr4g55cgreo4</a></p><p>2025.3.30 下午 进行专业课面试 </p>
+<p>候场教室和面试教室是分开的，面试教室有4个，候场教室有2个(学硕/专硕)</p>
+<p>要求1:30先在候场教室等待 教室里很多人一起 反正大家也不说话 氛围很压抑</p>
+<p>等着叫名 提前去面试教室的门口等</p>
+<p>进去会有计时</p>
+<p>3月26日，复试通知老师就让我们准备5分钟的PPT 所以会先讲PPT再提问</p>
+<p>每个人大概15分钟，5分钟PPT+10分钟提问</p>
+<p>我们这一天，面试从下午1点半 一直到6点 时间很长很长</p>
+<p>所以最前面和后面叫到的人 我觉得不太好</p>
+<p>我几乎是最后被叫到的</p>
+<p>当时面试一个屋子 5个老师 ，他们非常累，连头都不抬 让我很慌张</p>
+<p>我的提问内容：</p>
+<pre><code>1.本科学习和研究生学习的区别？如何保持生活工作平衡？(思想品德)
+
+ 2.你感兴趣的研究方向？（我其实根本不知道对什么感兴趣，就说了个LLM和生成式，否决了CV）为什么对这个感兴趣？(我居然说了一个好发文章 踩雷 完蛋了)
+
+3.提问PPT和简历中项目的内容：某项目的创新点在哪？（本科的一个CV项目 我替换了其中的特征提取网络）把特征提取网络换掉后的优势有？（终于有个准备到的了 但是答的不好.....）
+</code></pre>
+<p>（一定有一个关于思想品德的提问，其余问题随缘）</p>
+<p>每个复试教室，老师的提问内容差别悬殊，到最后基本看老师心情 </p>
+<p>有些儿戏，我觉得自己表现很差，我明明深挖了我PPT的所有细节，包括本科数学建模的代码、transfomer解码器编码器的每一层输出的内容、Pytorch框架怎么用，每一个具体操作的细节等等。</p>
+<p>都没用到</p>
+<p>觉得给我复试的老师有点傻逼</p>
+<p>我的面试成绩应该不高</p>
+<hr>
+<p>总之 心态才是第一位的</p>
+<p>复试189个人</p>
+<p>这些老师根本记不住谁是谁</p>
+<p>随缘吧</p>
+<hr>
+<p>20260119补：</p>
+<p>我现在弄清楚了所有，让我讲给你，面试老师手上有2份打分表，1份用来当草稿，1份是正式版要交上去，打分表上虽然有小项分(本科成绩和科研业绩、专业基础、培养潜力、分析和语言能力、综合素质 5项)，但大部分复试老师就是直接打一个总分。</p>
+<p>你所在教室5-6个老师，他们的打分表最终汇总到姚老师和杨老师那边(济事楼442)，会有助管把5份打分表算一个平均分，填在最终的你的复试记录表上。</p>
+<p>因为最终考生都是一起排名，所以你的面试教室如果有一两个老师打分普遍的低就很倒霉，</p>
+<p>据我已知 苗夺谦、熊明亮 这俩老师给分普遍低</p>
+<p>不过也无需太担心，就算表现再差平均分也不会低于120的。</p>
+<p>讲话的时候慢一点，想好了再说；交的纸质材料比ppt更重要，纸质才是老师提问的依据。</p>
+<p>2025.3.31 上午</p>
+<p>同样先候场</p>
+<p>等待叫名，每次提前5个人去门口等着</p>
+<p>我被分到了济事楼 317 房间</p>
+<p>进去后会有计时 每人5分钟整</p>
+<p>这次的口试体验非常好</p>
+<p>进去后有两个老师，看着不像老师，更像是口语流利的小留(音调很不错 吐字不太清晰)，大概30以下，都是男的</p>
+<p>你和他们面对面坐着(一张桌子两侧) 非常和蔼 引导式提问  循序渐进</p>
+<p>不需要长篇大论自我介绍！！！！！！老师会主动提问你（去年也是这样，大部分人都没有自我介绍）</p>
+<p>我的提问内容：（全程英语）</p>
+<pre><code>1.你叫什么名字？来自哪里？
+
+2.你本科来自哪个学校？
+
+3.你讲讲你在本科学校的表现吧？ 
+
+4.你有什么计算机的项目吗？
+
+5.这个项目你有什么创新吗？
+
+6.神经网络为什么这么强大呢powerful?
+</code></pre>
+<p>提问内容明显感觉是循序渐进的，因为我提到了本科的比赛和项目，所以追问到了神经网络。</p>
+<p>本来我昨天复试一塌糊涂，都要放弃了，没想到第二天上午的英语口试额外顺利，录取的希望又燃起来了</p>
+<p>大部分人没有问这么多问题</p>
+<p>我的口语突然流利起来了 所以问的多</p>
+<p>第 5 个问题明显感觉老师 用了点高级的单词 来测试我有没有听懂</p>
+<p>我居然听懂了，6</p>
+<p>真的突然好起来了</p>
+<p>所以 希望看到这些话的你也能 顺利吧</p>
+</article></main></body></html>

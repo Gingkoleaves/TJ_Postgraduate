@@ -1,0 +1,520 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>夏令营-题目与解析</title><style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--line:#e3e6ea;--accent:#0f6fc5;--code-bg:#f6f8fa;}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--fg);background:#fff;
+ font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB",-apple-system,"Segoe UI",Arial,sans-serif;
+ font-size:15px;line-height:1.75;}
+#layout{display:flex}
+#side{position:fixed;top:0;left:0;width:290px;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px 40px;font-size:13px}
+#side .bk{font-weight:700;font-size:15px;padding:6px 8px 10px;line-height:1.4}
+#side .meta{color:var(--muted);font-size:11px;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+#side a{display:block;color:#333;text-decoration:none;padding:3px 8px;border-radius:4px;line-height:1.5}
+#side a:hover{background:#eef3f8;color:var(--accent)}
+#side .g{font-weight:600;color:#111;padding:8px 8px 3px;margin-top:4px}
+#side .d1{padding-left:20px}#side .d2{padding-left:34px}#side .d3{padding-left:48px}
+#main{margin-left:290px;padding:36px 46px 120px;max-width:900px}
+.cover{padding:60px 0 30px;border-bottom:2px solid var(--fg)}
+.cover h1{font-size:30px;margin:0 0 10px}
+.cover .sub{color:var(--muted);font-size:13px;line-height:1.9}
+#toc{margin:26px 0 0}
+#toc h2{font-size:20px;border:0;margin:0 0 12px}
+#toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+#toc li{padding:2px 0;line-height:1.7}
+#toc li.t{font-weight:700;margin-top:10px}
+#toc li.l1{padding-left:16px}#toc li.l2{padding-left:32px}#toc li.l3{padding-left:48px}
+#toc a{color:#222;text-decoration:none;border-bottom:1px dotted #ccc}
+.doc{padding-top:8px}
+.doc>h1.dt{font-size:24px;margin:34px 0 6px;padding:0 0 8px;border-bottom:2px solid var(--line)}
+.doc .src{font-size:11px;color:var(--muted);margin:0 0 18px}
+.doc h1{font-size:21px;margin:26px 0 10px}
+.doc h2{font-size:19px;margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.doc h3{font-size:17px;margin:20px 0 8px}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px}
+p{margin:9px 0}
+img{max-width:100%;height:auto}
+img.tex{max-height:1.35em;vertical-align:-0.25em;display:inline}
+.missing-img{color:#b45309;background:#fff7ed;border:1px dashed #fdba74;border-radius:3px;padding:0 5px;font-size:12px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+pre code{white-space:pre-wrap;word-break:break-word}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:0.9em;background:var(--code-bg);padding:1px 4px;border-radius:3px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+th,td{border:1px solid #d5d9de;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f5f8;font-weight:600}
+blockquote{margin:12px 0;padding:4px 14px;border-left:4px solid #cfd8e3;background:#f8fafc;color:#374151}
+ul,ol{padding-left:26px;margin:9px 0}
+li{margin:3px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.backtop{font-size:12px;color:var(--muted);text-decoration:none;display:inline-block;margin-top:18px}
+@media print{
+ #side{display:none}
+ #main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.62}
+ @page{size:A4;margin:16mm 14mm}
+ .cover{padding:0 0 18px;break-after:page}
+ #toc{break-after:page}
+ .doc{break-before:page}
+ .doc>h1.dt{font-size:17pt}
+ .doc h1{font-size:15pt}.doc h2{font-size:13.5pt}.doc h3{font-size:12pt}
+ h1,h2,h3,h4{break-after:avoid;break-inside:avoid}
+ pre,table,blockquote,img{break-inside:avoid}
+ tr{break-inside:avoid}
+ img{max-height:210mm}
+ pre{font-size:8.6pt}
+ table{font-size:8.8pt}
+ .backtop{display:none}
+ a{color:inherit;text-decoration:none}
+}
+
+.det{border:1px solid #dbe3ec;border-left:4px solid #7aa7d6;background:#fbfdff;border-radius:6px;padding:6px 14px;margin:12px 0}
+.det-t{display:block;font-weight:700;color:#1d4e89;margin:4px 0 6px}
+.det-t::before{content:"▸ "}
+.det .det-t{margin-top:0}
+@media print{.det{break-inside:auto;background:#fbfdff}}
+
+#main,.doc{overflow-wrap:break-word}
+td,th{overflow-wrap:anywhere}
+pre{max-width:100%}
+.doc table{display:block;overflow-x:auto}
+@media print{.doc table{display:table;table-layout:fixed;width:100%}}
+
+#main{min-width:0;flex:1 1 auto}
+@media print{#layout{display:block}#main{min-width:0}}
+
+#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="../../../原始资料/26年同济CS预推免复习资料_离线完整版.html#s30">查看原始资料对应章节</a></p><div class="archive-note">回忆及整理资料，非官方试卷；原有题解和补编内容未经逐题校验。</div><p>原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/wh1x1qgg2af90krq">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/wh1x1qgg2af90krq</a></p><article class="doc"><h1 class="dt">同济2020夏令营机试题解析</h1><p class="src">原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/wh1x1qgg2af90krq">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/wh1x1qgg2af90krq</a></p><blockquote>
+<p>来源：2020同济大学电子与信息工程学院计算机系夏令营机试题目（满分40分，共4题）<br>编译环境：Dev-C++（TDM-GCC），C/C++</p>
+</blockquote>
+<hr>
+<h2>第一题：签到题（10分）</h2>
+<h3>题目描述</h3>
+<p>键盘依次输入 4 个字符串，分别是临时学号、姓名、报考类别和本科学校，按<strong>右对齐</strong>方式输出。要求其中最长的字符串（标签）输出时左边无空格，4 行的冒号对齐，冒号为半角字符，前后各一个空格。</p>
+<p><strong>输入要求：</strong></p>
+<ol>
+<li>四个字符串均不含空格，长度不超过 40；</li>
+<li>不考虑输入错误。</li>
+</ol>
+<p><strong>输出要求：</strong></p>
+<ol>
+<li>共四行，不要有多余的空行；</li>
+<li>每行最后无多余的空格或其它字符。</li>
+</ol>
+<h3>思路</h3>
+<p>标签右对齐到最长标签的显示宽度，后接 <code>" : "</code> 和输入的值。中文标签在 GBK 编码下每个汉字占 2 字节、显示宽度为 2 个字符。本题标签固定为"临时学号""姓名""报考类别""本科学校"，最长为 4 个汉字（显示宽度 4），"姓名"为 2 个汉字，需前补 2 个空格。</p>
+<h3>参考代码</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+int main() {
+    string labels[] = {"临时学号", "姓名", "报考类别", "本科学校"};
+    string values[4];
+    for (int i = 0; i &lt; 4; i++) {
+        cin &gt;&gt; values[i];
+    }
+    // 标签均为中文，按字数计算显示宽度（每字宽度2）
+    int widths[] = {8, 4, 8, 8};  // 字节数：4字=8, 2字=4
+    int maxWidth = 8;             // 最长标签"临时学号/报考类别/本科学校"=4字=8字节
+    for (int i = 0; i &lt; 4; i++) {
+        // 前导空格补齐到最长宽度
+        for (int j = widths[i]; j &lt; maxWidth; j += 2) {
+            cout &lt;&lt; "  ";  // 一个汉字宽度 = 2个空格
+        }
+        cout &lt;&lt; labels[i] &lt;&lt; " : " &lt;&lt; values[i] &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+<h3>输出示例</h3>
+<pre><code class="language-plain">临时学号 : 2020001
+    姓名 : 张三
+报考类别 : 学硕
+本科学校 : 某某大学
+</code></pre>
+<blockquote>
+<p><strong>注意：</strong> 本题与 2023 年机考第一题完全相同，是同济的经典签到题。</p>
+</blockquote>
+<hr>
+<h2>第二题：递归（20分）</h2>
+<h3>题目描述</h3>
+<ol>
+<li>键盘输入 2-9 间的数字，输出对应的数字三角形；</li>
+<li><strong>采用递归方式完成，整个程序中不允许出现循环</strong>（for、while、do-while、if-goto 均不允许）；</li>
+<li>给出预置的 cpp 文件，其中 main 函数不允许改动。</li>
+</ol>
+<p><strong>输入要求：</strong> 输入一个 2-9 间的整数，不考虑输入错误。</p>
+<p><strong>输出要求：</strong></p>
+<ol>
+<li>若输入的数字是 n，则共输出 n 行；</li>
+<li>每个数字之间加一个空格，每行的最后一个 1 后面，既可以有空格，也可以无空格。</li>
+</ol>
+<h3>输出样例</h3>
+<p>输入 <code>4</code>，输出：</p>
+<pre><code class="language-plain">1
+2 1
+3 2 1
+4 3 2 1
+</code></pre>
+<h3>思路</h3>
+<p>题目要求纯递归、禁止一切循环。需要两个递归函数：</p>
+<ul>
+<li><code>printRow(row)</code>：递归打印第 row 行，从 row 倒数到 1；</li>
+<li><code>printTriangle(cur, n)</code>：递归打印第 1 行到第 n 行。</li>
+</ul>
+<p>每行以 1 结尾（题目说"每行的最后一个1后面"），所以第 i 行输出 <code>i, i-1, ..., 2, 1</code>。</p>
+<h3>参考代码</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+// 递归打印一行：从 n 倒数到 1
+void printRow(int n) {
+    if (n == 0) return;       // 递归终止
+    cout &lt;&lt; n;
+    if (n &gt; 1) cout &lt;&lt; " ";   // 数字之间加空格，最后一个1后不加
+    printRow(n - 1);
+}
+
+// 递归打印 n 行三角形
+void printTriangle(int cur, int n) {
+    if (cur &gt; n) return;      // 递归终止
+    printRow(cur);
+    cout &lt;&lt; endl;
+    printTriangle(cur + 1, n);
+}
+
+int main() {
+    int n;
+    cin &gt;&gt; n;
+    printTriangle(1, n);
+    return 0;
+}
+</code></pre>
+<h3>输入 <code>9</code> 的输出</h3>
+<pre><code class="language-plain">1
+2 1
+3 2 1
+4 3 2 1
+5 4 3 2 1
+6 5 4 3 2 1
+7 6 5 4 3 2 1
+8 7 6 5 4 3 2 1
+9 8 7 6 5 4 3 2 1
+</code></pre>
+<h3>考点</h3>
+<ul>
+<li>递归思维：用递归替代循环，注意终止条件；</li>
+<li>两个递归函数的配合：一个控制行，一个控制行内数字；</li>
+<li>空格处理：数字之间加空格，行末不留多余空格（题目允许行末有空格，但规范写法不留）。</li>
+</ul>
+<hr>
+<h2>第三题：文件处理（30分）</h2>
+<h3>题目描述</h3>
+<p>用 main 函数带参数方式传入一个文件名，打开该文件，统计文件中出现的<strong>大写字母、小写字母、数字、空格及其它字符</strong>的个数，并输出五种类型字符的总数。</p>
+<p><strong>注：</strong> other 的计数方法，不允许取文件大小后减去其余四种，必须是判断该字符的值不属于前 4 种后再归入 other 计数。</p>
+<p><strong>输入要求：</strong></p>
+<ol>
+<li>文件名以 main 函数带参数方式给出（不考虑文件名输入错误）；</li>
+<li>假设文件中字符均为基本 ASCII 码（不含扩展 ASCII/中文）；</li>
+<li>文件大小不大于 1GB；</li>
+<li>Dev-C++ 中菜单"运行"-"参数"可设置 main 函数参数。</li>
+</ol>
+<p><strong>输出要求：</strong></p>
+<ol>
+<li>共六行，不要有多余的空行；</li>
+<li>每行最后无多余的空格或其它不可见字符；</li>
+<li>前五行的值之和应等于第六行，第六行的值应与文件属性中显示的字节大小一致。</li>
+</ol>
+<h3>思路</h3>
+<ul>
+<li>使用 <code>int main(int argc, char* argv[])</code> 接收文件名参数；</li>
+<li>逐字符读取文件（<code>fin.get(ch)</code>），按 ASCII 范围分类计数；</li>
+<li>大写 <code>'A'~'Z'</code>、小写 <code>'a'~'z'</code>、数字 <code>'0'~'9'</code>、空格 <code>' '</code>，其余归入 other；</li>
+<li>用二进制模式打开（<code>ios::binary</code>）确保 <code>\r\n</code> 在 Windows 下被分别计数（<code>\r</code> 计入 other），使总数等于文件字节大小；</li>
+<li>逐字符处理，内存占用 O(1)，可处理 1GB 大文件。</li>
+</ul>
+<h3>参考代码</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc &lt; 2) {
+        cerr &lt;&lt; "Usage: " &lt;&lt; argv[0] &lt;&lt; " &lt;filename&gt;" &lt;&lt; endl;
+        return 1;
+    }
+
+    ifstream fin(argv[1], ios::in | ios::binary);
+    if (!fin) {
+        cerr &lt;&lt; "Cannot open file: " &lt;&lt; argv[1] &lt;&lt; endl;
+        return 1;
+    }
+
+    int upper = 0, lower = 0, digit = 0, space = 0, other = 0;
+    char ch;
+
+    while (fin.get(ch)) {
+        if (ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z') {
+            upper++;
+        } else if (ch &gt;= 'a' &amp;&amp; ch &lt;= 'z') {
+            lower++;
+        } else if (ch &gt;= '0' &amp;&amp; ch &lt;= '9') {
+            digit++;
+        } else if (ch == ' ') {
+            space++;
+        } else {
+            other++;  // 必须逐个判断归入，不能用文件大小减去
+        }
+    }
+    fin.close();
+
+    int total = upper + lower + digit + space + other;
+
+    cout &lt;&lt; "upper: " &lt;&lt; upper &lt;&lt; endl;
+    cout &lt;&lt; "lower: " &lt;&lt; lower &lt;&lt; endl;
+    cout &lt;&lt; "digit: " &lt;&lt; digit &lt;&lt; endl;
+    cout &lt;&lt; "space: " &lt;&lt; space &lt;&lt; endl;
+    cout &lt;&lt; "other: " &lt;&lt; other &lt;&lt; endl;
+    cout &lt;&lt; "total: " &lt;&lt; total &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+<h3>输出示例（假设参数为 helloworld.cpp）</h3>
+<pre><code class="language-plain">upper: 5
+lower: 120
+digit: 8
+space: 42
+other: 35
+total: 210
+</code></pre>
+<blockquote>
+<p>实际数值取决于文件内容。<code>total</code> 应等于文件的字节大小。</p>
+</blockquote>
+<h3>考点与注意事项</h3>
+<ul>
+<li><strong>main 函数参数</strong>：<code>argc</code> 是参数个数，<code>argv[1]</code> 是文件名；</li>
+<li><strong>大文件处理</strong>：逐字符读取而非一次性读入内存，1GB 文件也无内存压力；</li>
+<li><strong>二进制模式</strong>：Windows 下文本模式会将 <code>\r\n</code> 转换为 <code>\n</code>，导致计数少一个字节，必须用 <code>ios::binary</code>；</li>
+<li><strong>other 计数方式</strong>：题目明确要求逐个字符判断，不能用 <code>文件大小 - 前四种</code>；</li>
+<li>Dev-C++ 调试时在"运行→参数"中填入文件路径。</li>
+</ul>
+<hr>
+<h2>第四题：算法——炸飞机游戏（40分）</h2>
+<h3>题目描述</h3>
+<p>在 m 行 × n 列的矩阵方格中随机摆放 k 架飞机，互相不得重叠、交叉。每架飞机形状固定，占 9 格（翼展 5 格、尾翼 3 格、头尾 4 格），有四种方向。输出摆放 k 架飞机的所有可能排列总数（轴对称、对角线对称均重复计数）。</p>
+<p><strong>输入：</strong> m、n、k（4 ≤ m,n ≤ 11，1 ≤ k ≤ min(m,n)）。<br><strong>输出：</strong> 一个整数，表示排列总数。</p>
+<h3>飞机形状</h3>
+<p>以机翼中心为参考点，朝上方向：</p>
+<pre><code class="language-plain">..*..
+*****
+.***.
+</code></pre>
+<ul>
+<li>机头：1 格（机翼正上方）</li>
+<li>机翼：5 格（水平翼展）</li>
+<li>尾翼：3 格（水平尾翼）</li>
+<li>共 9 格，四种方向通过 90° 旋转得到。</li>
+</ul>
+<h3>思路</h3>
+<p>DFS 回溯 + 64 位整数位掩码优化：</p>
+<ol>
+<li>预处理所有合法飞机位置，编码为两个 <code>unsigned long long</code> 位掩码（121 格分 bits 0-63 和 64-120）；</li>
+<li>预计算兼容列表 <code>compat[i]</code>：所有与飞机 i 不重叠的后续飞机 j；</li>
+<li>DFS 按索引递增选择飞机（避免重复计数同一组排列），用位掩码快速判断重叠；</li>
+<li>剪枝：剩余空格数 &lt; 剩余飞机数 × 9 时提前回溯。</li>
+</ol>
+<h3>参考代码</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int m, n, k;
+int P;
+vector&lt;unsigned long long&gt; pm_lo, pm_hi;
+vector&lt;vector&lt;int&gt;&gt; compat;
+long long ans = 0;
+
+// 飞机形状（朝上，以机翼中心为原点）
+int shape[9][2] = {
+    {-1, 0},
+    {0, -2}, {0, -1}, {0, 0}, {0, 1}, {0, 2},
+    {1, -1}, {1, 0}, {1, 1}
+};
+
+void rotate(int&amp; dr, int&amp; dc) {
+    int ndr = dc, ndc = -dr;
+    dr = ndr; dc = ndc;
+}
+
+void dfs(int placed, int last, unsigned long long lo, unsigned long long hi) {
+    if (placed == k) { ans++; return; }
+    int occ = __builtin_popcountll(lo) + __builtin_popcountll(hi);
+    if (m * n - occ &lt; (k - placed) * 9) return;
+
+    const vector&lt;int&gt;&amp; cand = (placed == 0) ? compat[P] : compat[last];
+    for (int j : cand) {
+        if ((lo &amp; pm_lo[j]) == 0 &amp;&amp; (hi &amp; pm_hi[j]) == 0) {
+            dfs(placed + 1, j, lo | pm_lo[j], hi | pm_hi[j]);
+        }
+    }
+}
+
+int main() {
+    cin &gt;&gt; m &gt;&gt; n &gt;&gt; k;
+
+    for (int r = 0; r &lt; m; r++) {
+        for (int c = 0; c &lt; n; c++) {
+            int off[9][2];
+            for (int i = 0; i &lt; 9; i++) {
+                off[i][0] = shape[i][0];
+                off[i][1] = shape[i][1];
+            }
+            for (int dir = 0; dir &lt; 4; dir++) {
+                unsigned long long lo = 0, hi = 0;
+                bool valid = true;
+                for (int i = 0; i &lt; 9; i++) {
+                    int nr = r + off[i][0];
+                    int nc = c + off[i][1];
+                    if (nr &lt; 0 || nr &gt;= m || nc &lt; 0 || nc &gt;= n) {
+                        valid = false; break;
+                    }
+                    int bit = nr * n + nc;
+                    if (bit &lt; 64) lo |= (1ULL &lt;&lt; bit);
+                    else hi |= (1ULL &lt;&lt; (bit - 64));
+                }
+                if (valid) {
+                    pm_lo.push_back(lo);
+                    pm_hi.push_back(hi);
+                }
+                if (dir &lt; 3)
+                    for (int i = 0; i &lt; 9; i++) rotate(off[i][0], off[i][1]);
+            }
+        }
+    }
+    P = (int)pm_lo.size();
+
+    compat.resize(P + 1);
+    for (int i = 0; i &lt; P; i++) {
+        for (int j = i + 1; j &lt; P; j++) {
+            if ((pm_lo[i] &amp; pm_lo[j]) == 0 &amp;&amp; (pm_hi[i] &amp; pm_hi[j]) == 0) {
+                compat[i].push_back(j);
+            }
+        }
+    }
+    for (int i = 0; i &lt; P; i++) compat[P].push_back(i);
+
+    dfs(0, P, 0, 0);
+    cout &lt;&lt; ans &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h3>性能数据（11×11 网格，-O2）</h3>
+<table>
+<thead>
+<tr>
+<th align="center">k</th>
+<th align="center">排列总数</th>
+<th align="center">耗时</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">252</td>
+<td align="center">&lt;0.01s</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">21,452</td>
+<td align="center">&lt;0.01s</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">777,864</td>
+<td align="center">&lt;0.01s</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">12,456,320</td>
+<td align="center">0.04s</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">84,386,560</td>
+<td align="center">0.32s</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center">217,440,604</td>
+<td align="center">1.5s</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center">173,657,484</td>
+<td align="center">3.2s</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center">31,815,202</td>
+<td align="center">3.8s</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">738,136</td>
+<td align="center">3.8s</td>
+</tr>
+</tbody></table>
+<p>所有情况均在 15 秒时限内。</p>
+<h3>考点</h3>
+<ul>
+<li>DFS 回溯与剪枝；</li>
+<li>位掩码优化（64 位整数表示棋盘状态）；</li>
+<li>预计算兼容列表减少重复判断；</li>
+<li>坐标旋转（90° clockwise：<code>(dr,dc) → (dc,-dr)</code>）；</li>
+<li>组合去重（按索引递增选择，避免同一组排列被重复计数）。</li>
+</ul>
+<hr>
+<h2>总结</h2>
+<table>
+<thead>
+<tr>
+<th align="center">题号</th>
+<th align="center">分值</th>
+<th align="left">考点</th>
+<th align="center">难度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">10</td>
+<td align="left">格式化输出、中文对齐</td>
+<td align="center">简单</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">20</td>
+<td align="left">递归（禁止循环）</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">30</td>
+<td align="left">文件操作、main参数、字符分类</td>
+<td align="center">中等</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">40</td>
+<td align="left">DFS回溯、位掩码、剪枝</td>
+<td align="center">困难</td>
+</tr>
+</tbody></table>
+<p><strong>命题特点：</strong></p>
+<ul>
+<li>同济夏令营机试风格稳定：签到题 + 递归/文件操作 + 算法大题；</li>
+<li>第一题和第四题与 2023 年机考<strong>完全重复</strong>，说明刷历年真题非常重要；</li>
+<li>递归题明确禁止循环，考察递归思维的纯粹性；</li>
+<li>文件处理题是同济特色，main 函数参数、二进制模式、大文件处理都需掌握；</li>
+<li>炸飞机题是区分度最大的题，需要熟练掌握 DFS + 位掩码优化。</li>
+</ul>
+</article></main></body></html>

@@ -1,0 +1,272 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>考研复试-题目与解析</title><style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--line:#e3e6ea;--accent:#0f6fc5;--code-bg:#f6f8fa;}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--fg);background:#fff;
+ font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB",-apple-system,"Segoe UI",Arial,sans-serif;
+ font-size:15px;line-height:1.75;}
+#layout{display:flex}
+#side{position:fixed;top:0;left:0;width:290px;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px 40px;font-size:13px}
+#side .bk{font-weight:700;font-size:15px;padding:6px 8px 10px;line-height:1.4}
+#side .meta{color:var(--muted);font-size:11px;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+#side a{display:block;color:#333;text-decoration:none;padding:3px 8px;border-radius:4px;line-height:1.5}
+#side a:hover{background:#eef3f8;color:var(--accent)}
+#side .g{font-weight:600;color:#111;padding:8px 8px 3px;margin-top:4px}
+#side .d1{padding-left:20px}#side .d2{padding-left:34px}#side .d3{padding-left:48px}
+#main{margin-left:290px;padding:36px 46px 120px;max-width:900px}
+.cover{padding:60px 0 30px;border-bottom:2px solid var(--fg)}
+.cover h1{font-size:30px;margin:0 0 10px}
+.cover .sub{color:var(--muted);font-size:13px;line-height:1.9}
+#toc{margin:26px 0 0}
+#toc h2{font-size:20px;border:0;margin:0 0 12px}
+#toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+#toc li{padding:2px 0;line-height:1.7}
+#toc li.t{font-weight:700;margin-top:10px}
+#toc li.l1{padding-left:16px}#toc li.l2{padding-left:32px}#toc li.l3{padding-left:48px}
+#toc a{color:#222;text-decoration:none;border-bottom:1px dotted #ccc}
+.doc{padding-top:8px}
+.doc>h1.dt{font-size:24px;margin:34px 0 6px;padding:0 0 8px;border-bottom:2px solid var(--line)}
+.doc .src{font-size:11px;color:var(--muted);margin:0 0 18px}
+.doc h1{font-size:21px;margin:26px 0 10px}
+.doc h2{font-size:19px;margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.doc h3{font-size:17px;margin:20px 0 8px}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px}
+p{margin:9px 0}
+img{max-width:100%;height:auto}
+img.tex{max-height:1.35em;vertical-align:-0.25em;display:inline}
+.missing-img{color:#b45309;background:#fff7ed;border:1px dashed #fdba74;border-radius:3px;padding:0 5px;font-size:12px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+pre code{white-space:pre-wrap;word-break:break-word}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:0.9em;background:var(--code-bg);padding:1px 4px;border-radius:3px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+th,td{border:1px solid #d5d9de;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f5f8;font-weight:600}
+blockquote{margin:12px 0;padding:4px 14px;border-left:4px solid #cfd8e3;background:#f8fafc;color:#374151}
+ul,ol{padding-left:26px;margin:9px 0}
+li{margin:3px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.backtop{font-size:12px;color:var(--muted);text-decoration:none;display:inline-block;margin-top:18px}
+@media print{
+ #side{display:none}
+ #main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.62}
+ @page{size:A4;margin:16mm 14mm}
+ .cover{padding:0 0 18px;break-after:page}
+ #toc{break-after:page}
+ .doc{break-before:page}
+ .doc>h1.dt{font-size:17pt}
+ .doc h1{font-size:15pt}.doc h2{font-size:13.5pt}.doc h3{font-size:12pt}
+ h1,h2,h3,h4{break-after:avoid;break-inside:avoid}
+ pre,table,blockquote,img{break-inside:avoid}
+ tr{break-inside:avoid}
+ img{max-height:210mm}
+ pre{font-size:8.6pt}
+ table{font-size:8.8pt}
+ .backtop{display:none}
+ a{color:inherit;text-decoration:none}
+}
+
+.det{border:1px solid #dbe3ec;border-left:4px solid #7aa7d6;background:#fbfdff;border-radius:6px;padding:6px 14px;margin:12px 0}
+.det-t{display:block;font-weight:700;color:#1d4e89;margin:4px 0 6px}
+.det-t::before{content:"▸ "}
+.det .det-t{margin-top:0}
+@media print{.det{break-inside:auto;background:#fbfdff}}
+
+#main,.doc{overflow-wrap:break-word}
+td,th{overflow-wrap:anywhere}
+pre{max-width:100%}
+.doc table{display:block;overflow-x:auto}
+@media print{.doc table{display:table;table-layout:fixed;width:100%}}
+
+#main{min-width:0;flex:1 1 auto}
+@media print{#layout{display:block}#main{min-width:0}}
+
+#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="../../../原始资料/26年同济CS预推免复习资料_离线完整版.html#s29">查看原始资料对应章节</a></p><div class="archive-note">回忆及整理资料，非官方试卷；原有题解和补编内容未经逐题校验。</div><p>原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/vwm39v7lunbld721">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/vwm39v7lunbld721</a></p><article class="doc"><h2>2023年机考真题</h2>
+<h3>第一题：签到输出题</h3>
+<p><strong>题目描述：</strong></p>
+<p>键盘依次输入 4 个字符串，分别是临时学号、姓名、报考类别和本科学校。按右对齐方式输出，要求其中最长的字符串（标签）输出时左边无空格，4 行的冒号对齐，冒号为半角字符，前后各一个空格。</p>
+<p><strong>输入要求：</strong> 四个字符串均不含空格，长度不超过 40，不考虑输入错误。</p>
+<p><strong>输出要求：</strong> 共四行，不要有多余空行，每行最后无多余空格。</p>
+<p><strong>思路：</strong> 标签右对齐到最长标签宽度（4个汉字=8字节/4显示宽度），后接 <code>" : "</code> 和值。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int main() {
+    string labels[] = {"临时学号", "姓名", "报考类别", "本科学校"};
+    string values[4];
+    for (int i = 0; i &lt; 4; i++) {
+        cin &gt;&gt; values[i];
+    }
+    // 计算最长标签的显示宽度（GBK下汉字算2，ASCII算1）
+    int maxWidth = 0;
+    int widths[4];
+    for (int i = 0; i &lt; 4; i++) {
+        int w = 0;
+        for (char c : labels[i]) {
+            w += ((unsigned char)c &gt; 127) ? 2 : 1;
+        }
+        // GBK汉字占2字节，每2字节算1个显示宽度
+        widths[i] = (int)labels[i].size() / 2;  // 全中文标签，按字数算
+        maxWidth = max(maxWidth, widths[i]);
+    }
+    for (int i = 0; i &lt; 4; i++) {
+        for (int j = 0; j &lt; maxWidth - widths[i]; j++) {
+            cout &lt;&lt; " ";
+        }
+        cout &lt;&lt; labels[i] &lt;&lt; " : " &lt;&lt; values[i] &lt;&lt; endl;
+    }
+    return 0;
+}
+</code></pre>
+<p><strong>输出示例：</strong></p>
+<pre><code class="language-plain">临时学号 : 2023001
+    姓名 : 张三
+报考类别 : 学硕
+本科学校 : 某某大学
+</code></pre>
+<hr>
+<h3>第二题：文件处理</h3>
+<p><strong>题目描述：</strong></p>
+<p>用 <code>main</code> 函数带参数方式传入一个文件名，打开 a 文件，将 a 文件中的大写字母输出到 b 文件。</p>
+<p><strong>输入要求：</strong></p>
+<ol>
+<li>文件名以 main 函数带参数方式给出（不考虑文件名输入错误）；</li>
+<li>文件中字符均为基本 ASCII 码（不含扩展 ASCII/中文）；</li>
+<li>文件大小不大于 1GB。</li>
+</ol>
+<p><strong>思路：</strong> <code>argc/argv</code> 接收文件名，逐字符读取，判断大写字母（<code>'A'~'Z'</code>）写入 <code>b.txt</code>。大文件用 <code>get</code> 逐字符处理避免内存问题。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+using namespace std;
+
+int main(int argc, char* argv[]) {
+    if (argc &lt; 2) {
+        cerr &lt;&lt; "Usage: " &lt;&lt; argv[0] &lt;&lt; " &lt;input_file&gt;" &lt;&lt; endl;
+        return 1;
+    }
+    ifstream fin(argv[1], ios::in | ios::binary);
+    if (!fin) {
+        cerr &lt;&lt; "Cannot open file: " &lt;&lt; argv[1] &lt;&lt; endl;
+        return 1;
+    }
+    ofstream fout("b.txt", ios::out | ios::binary);
+    char ch;
+    while (fin.get(ch)) {
+        if (ch &gt;= 'A' &amp;&amp; ch &lt;= 'Z') {
+            fout.put(ch);
+        }
+    }
+    fin.close();
+    fout.close();
+    return 0;
+}
+</code></pre>
+<p><strong>Dev-C++ 调试方法：</strong> 菜单"运行"→"参数"中设置 main 函数的参数（填入输入文件路径）。</p>
+<hr>
+<h3>第三题：炸飞机游戏</h3>
+<p><strong>题目描述：</strong></p>
+<p>在 m 行 × n 列的矩阵方格中随机摆放 k 架飞机，互相不得重叠、交叉。每架飞机形状固定，占 9 格（翼展 5 格、尾翼 3 格、头尾 4 格），有四种方向。输出摆放 k 架飞机的所有可能排列总数（轴对称、对角线对称均重复计数）。</p>
+<p><strong>输入：</strong> m、n、k 三个整数（4 ≤ m,n ≤ 11，1 ≤ k ≤ min(m,n)）。<br><strong>输出：</strong> 一个整数，表示排列总数。</p>
+<p><strong>飞机形状（以机翼中心为参考点，朝上）：</strong></p>
+<pre><code class="language-plain">..*..
+*****
+.***.
+</code></pre>
+<p>共 9 格。四种方向通过旋转得到。</p>
+<p><strong>思路：</strong> DFS 回溯 + 位掩码优化。预处理所有合法飞机位置为两个 64 位整数位掩码（121 格），预计算每架飞机的兼容列表（不重叠的后续飞机），DFS 按索引递增选择避免重复计数，并用剩余格子数剪枝。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int m, n, k;
+int P;  // 合法飞机位置总数
+vector&lt;unsigned long long&gt; pm_lo, pm_hi;  // 位掩码（bits 0-63 / 64-120）
+vector&lt;vector&lt;int&gt;&gt; compat;  // compat[i] = 所有 j&gt;i 且与飞机 i 不重叠的飞机
+long long ans = 0;
+
+// 飞机形状（朝上，以机翼中心为原点）
+// 头: (-1,0), 机翼: (0,-2)~(0,2), 尾: (1,-1)~(1,1)
+int shape[9][2] = {
+    {-1, 0},
+    {0, -2}, {0, -1}, {0, 0}, {0, 1}, {0, 2},
+    {1, -1}, {1, 0}, {1, 1}
+};
+
+void rotate(int&amp; dr, int&amp; dc) {
+    int ndr = dc, ndc = -dr;
+    dr = ndr; dc = ndc;
+}
+
+void dfs(int placed, int last, unsigned long long lo, unsigned long long hi) {
+    if (placed == k) { ans++; return; }
+    // 剪枝：剩余空格不够放剩下的飞机
+    int occ = __builtin_popcountll(lo) + __builtin_popcountll(hi);
+    if (m * n - occ &lt; (k - placed) * 9) return;
+    // placed==0 时从 compat[P]（全部飞机）中选，否则从 compat[last] 中选
+    const vector&lt;int&gt;&amp; cand = (placed == 0) ? compat[P] : compat[last];
+    for (int j : cand) {
+        if ((lo &amp; pm_lo[j]) == 0 &amp;&amp; (hi &amp; pm_hi[j]) == 0) {
+            dfs(placed + 1, j, lo | pm_lo[j], hi | pm_hi[j]);
+        }
+    }
+}
+
+int main() {
+    cin &gt;&gt; m &gt;&gt; n &gt;&gt; k;
+
+    // 预处理：枚举所有位置和方向的飞机
+    for (int r = 0; r &lt; m; r++) {
+        for (int c = 0; c &lt; n; c++) {
+            int off[9][2];
+            for (int i = 0; i &lt; 9; i++) {
+                off[i][0] = shape[i][0];
+                off[i][1] = shape[i][1];
+            }
+            for (int dir = 0; dir &lt; 4; dir++) {
+                unsigned long long lo = 0, hi = 0;
+                bool valid = true;
+                for (int i = 0; i &lt; 9; i++) {
+                    int nr = r + off[i][0];
+                    int nc = c + off[i][1];
+                    if (nr &lt; 0 || nr &gt;= m || nc &lt; 0 || nc &gt;= n) {
+                        valid = false; break;
+                    }
+                    int bit = nr * n + nc;
+                    if (bit &lt; 64) lo |= (1ULL &lt;&lt; bit);
+                    else hi |= (1ULL &lt;&lt; (bit - 64));
+                }
+                if (valid) {
+                    pm_lo.push_back(lo);
+                    pm_hi.push_back(hi);
+                }
+                if (dir &lt; 3)
+                    for (int i = 0; i &lt; 9; i++) rotate(off[i][0], off[i][1]);
+            }
+        }
+    }
+    P = (int)pm_lo.size();
+
+    // 预计算兼容列表
+    compat.resize(P + 1);
+    for (int i = 0; i &lt; P; i++) {
+        for (int j = i + 1; j &lt; P; j++) {
+            if ((pm_lo[i] &amp; pm_lo[j]) == 0 &amp;&amp; (pm_hi[i] &amp; pm_hi[j]) == 0) {
+                compat[i].push_back(j);
+            }
+        }
+    }
+    for (int i = 0; i &lt; P; i++) compat[P].push_back(i);
+
+    dfs(0, P, 0, 0);
+    cout &lt;&lt; ans &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p><strong>性能：</strong> 11×11 网格、k=9 时约 3.8 秒（-O2），满足 15 秒时限。</p>
+<p><strong>复杂度分析：</strong> 设合法位置数 P（11×11 时 P=252），DFS 深度 k。兼容列表 + 位掩码运算 + 剩余格子剪枝使实际搜索量远小于 C(P,k)。</p>
+<hr>
+</article></main></body></html>

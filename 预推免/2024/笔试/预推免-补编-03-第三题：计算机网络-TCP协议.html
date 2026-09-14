@@ -1,0 +1,398 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>预推免-补编-03-第三题：计算机网络-TCP协议</title><style>
+:root{--fg:#1a1a1a;--muted:#6b7280;--line:#e3e6ea;--accent:#0f6fc5;--code-bg:#f6f8fa;}
+*{box-sizing:border-box}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{margin:0;color:var(--fg);background:#fff;
+ font-family:"PingFang SC","Microsoft YaHei","Source Han Sans SC","Noto Sans CJK SC","Hiragino Sans GB",-apple-system,"Segoe UI",Arial,sans-serif;
+ font-size:15px;line-height:1.75;}
+#layout{display:flex}
+#side{position:fixed;top:0;left:0;width:290px;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#fafbfc;padding:14px 10px 40px;font-size:13px}
+#side .bk{font-weight:700;font-size:15px;padding:6px 8px 10px;line-height:1.4}
+#side .meta{color:var(--muted);font-size:11px;padding:0 8px 10px;border-bottom:1px solid var(--line);margin-bottom:8px}
+#side a{display:block;color:#333;text-decoration:none;padding:3px 8px;border-radius:4px;line-height:1.5}
+#side a:hover{background:#eef3f8;color:var(--accent)}
+#side .g{font-weight:600;color:#111;padding:8px 8px 3px;margin-top:4px}
+#side .d1{padding-left:20px}#side .d2{padding-left:34px}#side .d3{padding-left:48px}
+#main{margin-left:290px;padding:36px 46px 120px;max-width:900px}
+.cover{padding:60px 0 30px;border-bottom:2px solid var(--fg)}
+.cover h1{font-size:30px;margin:0 0 10px}
+.cover .sub{color:var(--muted);font-size:13px;line-height:1.9}
+#toc{margin:26px 0 0}
+#toc h2{font-size:20px;border:0;margin:0 0 12px}
+#toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+#toc li{padding:2px 0;line-height:1.7}
+#toc li.t{font-weight:700;margin-top:10px}
+#toc li.l1{padding-left:16px}#toc li.l2{padding-left:32px}#toc li.l3{padding-left:48px}
+#toc a{color:#222;text-decoration:none;border-bottom:1px dotted #ccc}
+.doc{padding-top:8px}
+.doc>h1.dt{font-size:24px;margin:34px 0 6px;padding:0 0 8px;border-bottom:2px solid var(--line)}
+.doc .src{font-size:11px;color:var(--muted);margin:0 0 18px}
+.doc h1{font-size:21px;margin:26px 0 10px}
+.doc h2{font-size:19px;margin:24px 0 10px;padding-bottom:5px;border-bottom:1px solid var(--line)}
+.doc h3{font-size:17px;margin:20px 0 8px}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px}
+p{margin:9px 0}
+img{max-width:100%;height:auto}
+img.tex{max-height:1.35em;vertical-align:-0.25em;display:inline}
+.missing-img{color:#b45309;background:#fff7ed;border:1px dashed #fdba74;border-radius:3px;padding:0 5px;font-size:12px}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:6px;padding:10px 12px;overflow-x:auto;font-size:12.5px;line-height:1.55}
+pre code{white-space:pre-wrap;word-break:break-word}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:0.9em;background:var(--code-bg);padding:1px 4px;border-radius:3px}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:13px}
+th,td{border:1px solid #d5d9de;padding:5px 8px;text-align:left;vertical-align:top}
+th{background:#f2f5f8;font-weight:600}
+blockquote{margin:12px 0;padding:4px 14px;border-left:4px solid #cfd8e3;background:#f8fafc;color:#374151}
+ul,ol{padding-left:26px;margin:9px 0}
+li{margin:3px 0}
+hr{border:0;border-top:1px solid var(--line);margin:22px 0}
+a{color:var(--accent)}
+.backtop{font-size:12px;color:var(--muted);text-decoration:none;display:inline-block;margin-top:18px}
+@media print{
+ #side{display:none}
+ #main{margin:0;padding:0;max-width:none}
+ body{font-size:10.5pt;line-height:1.62}
+ @page{size:A4;margin:16mm 14mm}
+ .cover{padding:0 0 18px;break-after:page}
+ #toc{break-after:page}
+ .doc{break-before:page}
+ .doc>h1.dt{font-size:17pt}
+ .doc h1{font-size:15pt}.doc h2{font-size:13.5pt}.doc h3{font-size:12pt}
+ h1,h2,h3,h4{break-after:avoid;break-inside:avoid}
+ pre,table,blockquote,img{break-inside:avoid}
+ tr{break-inside:avoid}
+ img{max-height:210mm}
+ pre{font-size:8.6pt}
+ table{font-size:8.8pt}
+ .backtop{display:none}
+ a{color:inherit;text-decoration:none}
+}
+
+.det{border:1px solid #dbe3ec;border-left:4px solid #7aa7d6;background:#fbfdff;border-radius:6px;padding:6px 14px;margin:12px 0}
+.det-t{display:block;font-weight:700;color:#1d4e89;margin:4px 0 6px}
+.det-t::before{content:"▸ "}
+.det .det-t{margin-top:0}
+@media print{.det{break-inside:auto;background:#fbfdff}}
+
+#main,.doc{overflow-wrap:break-word}
+td,th{overflow-wrap:anywhere}
+pre{max-width:100%}
+.doc table{display:block;overflow-x:auto}
+@media print{.doc table{display:table;table-layout:fixed;width:100%}}
+
+#main{min-width:0;flex:1 1 auto}
+@media print{#layout{display:block}#main{min-width:0}}
+
+#main{margin:0 auto;max-width:1000px;padding:24px}.archive-note{background:#fff7ed;padding:14px;border:1px solid #fed7aa}</style></head><body><main id="main"><p><a href="../../../原始资料/26年同济CS预推免复习资料_离线完整版.html#s25">查看原始资料对应章节</a></p><div class="archive-note">本篇含“根据回忆补全的题目”、知识点讲解及模拟练习，不能视为完整原题。原解析可能有误，例如127结点满二叉树第7层64结点应为填满。</div><p>原文：<a href="https://www.yuque.com/bandaotiehe-gexb9/hsldt8/pzbw7apkgl1q9et6">https://www.yuque.com/bandaotiehe-gexb9/hsldt8/pzbw7apkgl1q9et6</a></p><article class="doc"><h2>第三题：计算机网络-TCP协议</h2>
+<h3>涉及知识点</h3>
+<h4>1. TCP协议特点</h4>
+<ul>
+<li><strong>面向连接</strong>：通信前需建立连接</li>
+<li><strong>可靠传输</strong>：确保数据按序无差错到达</li>
+<li><strong>全双工通信</strong>：双向数据传输</li>
+<li><strong>面向字节流</strong>：无消息边界</li>
+<li><strong>流量控制</strong>：滑动窗口机制</li>
+<li><strong>拥塞控制</strong>：慢开始、拥塞避免、快重传、快恢复</li>
+</ul>
+<h4>2. TCP报文段格式</h4>
+<ul>
+<li><strong>源端口</strong>（16位）、<strong>目的端口</strong>（16位）</li>
+<li><strong>序号seq</strong>（32位）：本报文段第一个字节的序号</li>
+<li><strong>确认号ack</strong>（32位）：期望收到的下一个字节序号</li>
+<li><strong>数据偏移</strong>（4位）：首部长度</li>
+<li><strong>标志位</strong>（6位）：<ul>
+<li>URG：紧急指针有效</li>
+<li><strong>ACK</strong>：确认号有效</li>
+<li>PSH：尽快交付应用层</li>
+<li>RST：重置连接</li>
+<li><strong>SYN</strong>：同步序号，建立连接</li>
+<li><strong>FIN</strong>：释放连接</li>
+</ul>
+</li>
+<li><strong>窗口</strong>（16位）：接收窗口大小</li>
+<li><strong>校验和</strong>（16位）</li>
+<li><strong>紧急指针</strong>（16位）</li>
+</ul>
+<h4>3. TCP三次握手（建立连接）</h4>
+<pre><code class="language-plain">客户端                           服务器
+  |                                 |
+  |  SYN=1, seq=x                  |
+  |-------------------------------&gt;|  (1) SYN_SENT
+  |                                 |  (2) SYN_RCVD
+  |  SYN=1, ACK=1, seq=y, ack=x+1 |
+  |&lt;-------------------------------|
+  |                                 |
+  |  ACK=1, seq=x+1, ack=y+1      |
+  |-------------------------------&gt;|  (3) ESTABLISHED
+  |                                 |  ESTABLISHED
+</code></pre>
+<p><strong>过程</strong>：</p>
+<ol>
+<li><strong>第一次握手</strong>：客户端发送SYN=1，seq=x（随机初始序号）<ul>
+<li>客户端进入SYN_SENT状态</li>
+</ul>
+</li>
+<li><strong>第二次握手</strong>：服务器发送SYN=1，ACK=1，seq=y，ack=x+1<ul>
+<li>服务器进入SYN_RCVD状态</li>
+</ul>
+</li>
+<li><strong>第三次握手</strong>：客户端发送ACK=1，seq=x+1，ack=y+1<ul>
+<li>双方进入ESTABLISHED状态</li>
+</ul>
+</li>
+</ol>
+<p><strong>为什么需要三次？</strong></p>
+<ul>
+<li>防止失效的连接请求到达服务器（如第一次握手延迟到达）</li>
+<li>确认双方的发送和接收能力都正常</li>
+<li>协商初始序列号</li>
+</ul>
+<h4>4. TCP四次挥手（释放连接）</h4>
+<pre><code class="language-plain">客户端                           服务器
+  |                                 |
+  |  FIN=1, seq=u                  |
+  |-------------------------------&gt;|  (1) FIN_WAIT_1
+  |                                 |  (2) CLOSE_WAIT
+  |  ACK=1, seq=v, ack=u+1        |
+  |&lt;-------------------------------|  FIN_WAIT_2
+  |                                 |
+  |  FIN=1, ACK=1, seq=w, ack=u+1 |
+  |&lt;-------------------------------|  (3) LAST_ACK
+  |                                 |
+  |  ACK=1, seq=u+1, ack=w+1      |
+  |-------------------------------&gt;|  (4) TIME_WAIT
+  |                                 |  CLOSED
+  |  (等待2MSL)                     |
+  |                                 |
+CLOSED                              |
+</code></pre>
+<p><strong>过程</strong>：</p>
+<ol>
+<li>客户端发送FIN=1，seq=u，进入FIN_WAIT_1</li>
+<li>服务器发送ACK=1，ack=u+1，进入CLOSE_WAIT；客户端进入FIN_WAIT_2</li>
+<li>服务器发送FIN=1，ACK=1，seq=w，ack=u+1，进入LAST_ACK</li>
+<li>客户端发送ACK=1，ack=w+1，进入TIME_WAIT，等待2MSL后CLOSED</li>
+</ol>
+<p><strong>为什么需要四次？</strong></p>
+<ul>
+<li>TCP是全双工，需要双向关闭</li>
+<li>第2、3次可能合并（服务器立即关闭时）</li>
+</ul>
+<p><strong>TIME_WAIT状态</strong>：</p>
+<ul>
+<li>时长：2MSL（Maximum Segment Lifetime，通常2分钟）</li>
+<li>目的：<ul>
+<li>确保最后的ACK能到达服务器</li>
+<li>让旧连接的所有报文段消失</li>
+</ul>
+</li>
+</ul>
+<h4>5. TCP可靠传输机制</h4>
+<p><strong>1) 序号和确认</strong></p>
+<ul>
+<li>每个字节都有序号</li>
+<li>ACK确认收到的字节</li>
+</ul>
+<p><strong>2) 超时重传</strong></p>
+<ul>
+<li>发送方设置重传定时器</li>
+<li>超时未收到ACK则重传</li>
+<li>动态计算RTO（重传超时时间）</li>
+</ul>
+<p><strong>3) 滑动窗口</strong></p>
+<ul>
+<li>发送窗口：已发送未确认 + 可发送</li>
+<li>接收窗口：可接收的序号范围</li>
+<li>实现流量控制和高效传输</li>
+</ul>
+<p><strong>4) 快重传</strong></p>
+<ul>
+<li>收到3个重复ACK立即重传</li>
+<li>不等超时</li>
+</ul>
+<p><strong>5) 选择确认SACK</strong></p>
+<ul>
+<li>告知发送方哪些数据已收到</li>
+<li>减少不必要的重传</li>
+</ul>
+<h4>6. TCP流量控制</h4>
+<ul>
+<li>接收方通过窗口字段通告可用缓冲区大小</li>
+<li>发送方根据接收窗口调整发送速率</li>
+<li>防止接收方缓冲区溢出</li>
+</ul>
+<h4>7. TCP拥塞控制</h4>
+<p><strong>拥塞窗口cwnd</strong>：发送方维护，限制发送速率</p>
+<p><strong>四个算法</strong>：</p>
+<p><strong>1) 慢开始</strong></p>
+<ul>
+<li>初始cwnd = 1 MSS</li>
+<li>每收到一个ACK，cwnd加1</li>
+<li>指数增长：1 → 2 → 4 → 8 → ...</li>
+<li>达到慢开始门限ssthresh时，转为拥塞避免</li>
+</ul>
+<p><strong>2) 拥塞避免</strong></p>
+<ul>
+<li>每经过一个RTT，cwnd加1</li>
+<li>线性增长：n → n+1 → n+2 → ...</li>
+</ul>
+<p><strong>3) 快重传</strong></p>
+<ul>
+<li>收到3个重复ACK，立即重传</li>
+<li>不等超时</li>
+</ul>
+<p><strong>4) 快恢复</strong></p>
+<ul>
+<li>快重传后：<ul>
+<li>ssthresh = cwnd / 2</li>
+<li>cwnd = ssthresh</li>
+<li>直接进入拥塞避免（不回到慢开始）</li>
+</ul>
+</li>
+</ul>
+<p><strong>超时处理</strong>：</p>
+<ul>
+<li>ssthresh = cwnd / 2</li>
+<li>cwnd = 1</li>
+<li>重新慢开始</li>
+</ul>
+<h3>根据回忆补全的题目</h3>
+<p><strong>题目</strong>：关于TCP协议，回答以下问题：</p>
+<ol>
+<li>简述TCP三次握手的过程，并解释为什么不能是两次握手？</li>
+<li>在TCP连接中，客户端发送了一个长度为1000字节的数据段（seq=2000），服务器正确接收后应该返回什么确认号？</li>
+<li>假设TCP使用慢开始和拥塞避免算法，初始ssthresh=16（单位MSS），描述cwnd的变化过程直到第一次出现超时，并画出cwnd随时间变化的示意图。</li>
+<li>TIME_WAIT状态的作用是什么？为什么要等待2MSL的时间？</li>
+</ol>
+<h3>详细解析</h3>
+<h4>解答1：三次握手过程</h4>
+<p><strong>过程</strong>：</p>
+<ol>
+<li>客户端发送：SYN=1, seq=x（随机初始序号）</li>
+<li>服务器回复：SYN=1, ACK=1, seq=y, ack=x+1</li>
+<li>客户端确认：ACK=1, seq=x+1, ack=y+1</li>
+</ol>
+<p><strong>为什么不能是两次？</strong></p>
+<p><strong>问题1：无法确认客户端的接收能力</strong></p>
+<ul>
+<li>两次握手：客户端发SYN → 服务器回SYN+ACK → 连接建立</li>
+<li>服务器无法确认客户端是否收到了自己的SYN+ACK</li>
+<li>如果SYN+ACK丢失，服务器认为连接建立，客户端却不知道</li>
+</ul>
+<p><strong>问题2：失效的连接请求</strong></p>
+<ul>
+<li>场景：客户端发送SYN1，网络延迟很久才到达</li>
+<li>客户端超时后重发SYN2，建立连接并完成通信，关闭连接</li>
+<li>此时SYN1才到达服务器</li>
+<li>两次握手：服务器回复ACK后认为连接建立，等待数据，但客户端不会发送</li>
+<li>三次握手：服务器回复SYN+ACK后，等不到客户端的第三次握手，不会建立连接</li>
+</ul>
+<p><strong>问题3：无法协商双方的初始序列号</strong></p>
+<ul>
+<li>TCP需要双方都确认对方的初始序列号</li>
+<li>两次握手无法保证客户端知道服务器已收到并确认了自己的序列号</li>
+</ul>
+<h4>解答2：确认号计算</h4>
+<ul>
+<li>客户端发送：seq=2000, length=1000</li>
+<li>数据占用序号：2000~2999（共1000个字节）</li>
+<li>服务器期望收到的下一个字节序号：3000</li>
+<li><strong>服务器返回确认号：ack=3000</strong></li>
+</ul>
+<h4>解答3：cwnd变化过程</h4>
+<p><strong>初始条件</strong>：</p>
+<ul>
+<li>cwnd = 1 MSS</li>
+<li>ssthresh = 16 MSS</li>
+</ul>
+<p><strong>变化过程</strong>：</p>
+<p><strong>慢开始阶段</strong>（cwnd &lt; ssthresh）：</p>
+<ul>
+<li>RTT 1: cwnd = 1 → 2</li>
+<li>RTT 2: cwnd = 2 → 4</li>
+<li>RTT 3: cwnd = 4 → 8</li>
+<li>RTT 4: cwnd = 8 → 16（达到ssthresh）</li>
+</ul>
+<p><strong>拥塞避免阶段</strong>（cwnd ≥ ssthresh）：</p>
+<ul>
+<li>RTT 5: cwnd = 16 → 17</li>
+<li>RTT 6: cwnd = 17 → 18</li>
+<li>RTT 7: cwnd = 18 → 19</li>
+<li>...</li>
+<li>继续线性增长，直到出现超时</li>
+</ul>
+<p><strong>假设RTT 12时出现超时</strong>：</p>
+<ul>
+<li>此时cwnd = 23</li>
+<li>超时后：<ul>
+<li>ssthresh = cwnd / 2 = 23 / 2 = 11（向下取整）</li>
+<li>cwnd = 1</li>
+<li>重新慢开始</li>
+</ul>
+</li>
+</ul>
+<p><strong>示意图</strong>：</p>
+<pre><code class="language-plain">cwnd
+ 24 |                    /○ (超时)
+ 20 |                  /
+ 16 |           ○----/
+ 12 |         /
+  8 |     ○
+  4 |   ○
+  2 | ○
+  1 |○                        ○ (重新开始)
+    +--------------------------&gt; RTT
+      1  2  3  4  5  6 ...12  13
+      ←慢开始→←拥塞避免→
+</code></pre>
+<h4>解答4：TIME_WAIT状态</h4>
+<p><strong>作用1：确保最后的ACK能到达</strong></p>
+<ul>
+<li>四次挥手中，客户端发送最后的ACK后进入TIME_WAIT</li>
+<li>如果这个ACK丢失，服务器会重传FIN</li>
+<li>TIME_WAIT期间可以接收并重发ACK</li>
+<li>如果立即关闭，服务器重传的FIN会收到RST，导致服务器异常</li>
+</ul>
+<p><strong>作用2：让旧连接的报文段消失</strong></p>
+<ul>
+<li>确保本连接的所有报文段都从网络中消失</li>
+<li>防止旧连接的延迟报文段出现在新连接中（如果新连接使用相同的端口）</li>
+</ul>
+<p><strong>为什么是2MSL？</strong></p>
+<ul>
+<li>MSL（Maximum Segment Lifetime）：报文段最大生存时间</li>
+<li>最坏情况：<ul>
+<li>客户端发送ACK用时1 MSL</li>
+<li>服务器重传FIN用时1 MSL</li>
+</ul>
+</li>
+<li>共2 MSL可确保双向报文都消失</li>
+<li>典型值：MSL = 2分钟，2MSL = 4分钟（Linux中常为60秒）</li>
+</ul>
+<h3>模拟练习题</h3>
+<h4>练习1</h4>
+<p>主机A向主机B发送TCP报文段，首部中源端口号是8080，目的端口号是80，序号是1000，确认号是2000，数据部分长度是500字节。请回答：</p>
+<ol>
+<li>这个报文段占用的序号范围是多少？</li>
+<li>主机B收到后，应该返回什么确认号？</li>
+<li>如果这个报文段丢失，主机A会采取什么措施？</li>
+</ol>
+<p>点击查看答案</p>
+<ol>
+<li><strong>序号范围</strong>：1000 ~ 1499（共500个序号） 2. <strong>确认号</strong>：ack = 1500（期望收到的下一个字节） 3. <strong>丢失处理</strong>： - 主机A设置重传定时器 - 超时未收到ACK，重传该报文段 - 如果收到3个重复ACK（后续报文段的ACK都是1500），触发快重传，立即重传</li>
+</ol>
+<h4>练习2</h4>
+<p>TCP使用拥塞控制算法，初始cwnd=1，ssthresh=8。在传输过程中：</p>
+<ul>
+<li>第16个RTT时出现超时</li>
+<li>第24个RTT时收到3个重复ACK</li>
+</ul>
+<p>画出cwnd的变化曲线，并标注关键点的数值。</p>
+<p>点击查看答案</p>
+<p><strong>变化过程</strong>： RTT 1-3（慢开始）：1 → 2 → 4 → 8 RTT 4-15（拥塞避免）：8 → 9 → 10 → ... → 19 RTT 16（超时）：- ssthresh = 19/2 = 9 - cwnd = 1 RTT 17-20（慢开始）：1 → 2 → 4 → 8 → 9（达到ssthresh，转拥塞避免） RTT 21-24（拥塞避免）：9 → 10 → 11 → 12 → 13 RTT 24（3个重复ACK，快重传+快恢复）：- ssthresh = 13/2 = 6 - cwnd = 6（直接进入拥塞避免） RTT 25-...（拥塞避免）：6 → 7 → 8 → ... 关键点：- RTT 4: cwnd=8（首次达到ssthresh） - RTT 15: cwnd=19（超时前最大值） - RTT 16: cwnd=1（超时后） - RTT 20: cwnd=9（第二次达到ssthresh） - RTT 24: cwnd=6（快恢复后） </p>
+<h4>练习3</h4>
+<p>解释TCP为什么是面向字节流而不是面向消息的？这会带来什么问题？如何解决？</p>
+<p>点击查看答案</p>
+<p><strong>面向字节流的含义</strong>：- TCP把应用层数据看作无结构的字节序列 - 不保留应用层的消息边界 - 发送方可能将多个write()的数据合并成一个TCP报文段 - 接收方可能需要多个read()才能读完一个应用层消息 <strong>对比面向消息</strong>：- UDP是面向消息的 - 每个sendto()对应一个UDP数据报 - 接收方每个recvfrom()接收一个完整消息 <strong>带来的问题</strong>：- <strong>粘包</strong>：多个应用层消息被合并 - <strong>拆包</strong>：一个应用层消息被拆分 - 应用层无法直接区分消息边界 <strong>解决方案</strong>： 1. <strong>固定长度</strong>：每个消息固定N字节 2. <strong>特殊分隔符</strong>：用\n、\r\n等分隔消息 3. <strong>长度前缀</strong>：消息头部包含长度字段 <code>[4字节长度][消息内容]</code> 4. <strong>应用层协议</strong>：如HTTP的Content-Length <strong>示例代码（长度前缀）</strong>：# 发送 def send_message(sock, msg): msg_bytes = msg.encode() length = len(msg_bytes) sock.sendall(length.to_bytes(4, 'big') + msg_bytes) # 接收 def recv_message(sock): length_bytes = sock.recv(4) length = int.from_bytes(length_bytes, 'big') msg_bytes = sock.recv(length) return msg_bytes.decode()</p>
+<hr>
+</article></main></body></html>
